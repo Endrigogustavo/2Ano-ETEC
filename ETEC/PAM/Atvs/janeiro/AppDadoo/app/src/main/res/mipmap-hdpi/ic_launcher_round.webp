@@ -1,0 +1,58 @@
+ogging.TextWriterEventListener.Dispose">
+      <summary>
+            Releases all resources used by the current instance of the <see cref="T:Microsoft.IdentityModel.Logging.TextWriterEventListener"/> class.
+            </summary>
+    </member>
+  </members><Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+	<SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+		<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+		<Reference URI="">
+			<Transforms>
+				<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+			</Transforms>
+			<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+			<DigestValue>8X3JhXT/rMfIOBktdBP/XKBrfgNqXJkP8UZCempl3Pg=</DigestValue>
+		</Reference>
+	</SignedInfo>
+	<SignatureValue>
+g2MpW7Ry78JaK/9E8m6FRYPBcFLV9vFeXWe9Tra86QTOhFt2xXyXlVm8TKF5BkRv
+hDOla5sOnOO0l8Y4oAJwt6lLG+/mkJ1X5CDZad2lhj8uhOiGg3AUrwBCFZrdi3Tr
+E7ampp20NSgquA+ohGDFUF6XksI/1p5HBgijN/Zde07PziIxMnY+qupM363qCF3A
+ssVOCfkJRmuhhu9h7da3rLR1nFYGk36ASyALUpMMzgTqP3Q5ZEjFHwb8f4TCCf77
+8UnDRJhy/DDbDaW6iniuUDtpRRW5bwgk3LWrkCl5m/c2SgbPUaRIOtjp+x9MjTwI
+sq844SPesVKm6tuAZZL6g2uv5jr7IElvGRXU6pVOGmMSHwhNQmRD3BDX0OgF5Ake
+jTSvPLLtoZesSWTtWOqhZWiemJzB3lDINgM4s5QzjARvUg1IFAwxnJk65b1v5F0o
+uvGm2pAwgTxDGF170UT+lZOzJs3T1VQOEXHWeVEgSw6jjgM6Nf1zMLpza9Q7+uMi
+lLNMD6PT1GU2fVgrTJ/7Q87esyV4c4vgqxJ4PZJ8j45UjBQjsz0qEADSbZ9zBCu6
+H3MSJjfJ5+F+pUx2FkqEMla4XXBGiwbXEK8f8BoBL2eGEyjdPT9GjpM5JtYWfXek
+815bK16YmWN8LiopeOiADwuh8ME6BjU0YAYWE1SkTws=
+	</SignatureValue>
+	<KeyInfo>
+		<KeyValue>
+			<RSAKeyValue>
+				<Modulus>
+wh+fVk/xCA7OxavhBAXyThzGbX2np+er2HLgqo4PkhAzT4rwen8KcFVgIdD2/SOr
+n3yBEtbIH+Jx5AkJ+0qP5Rub9bZU5AGo+dTogCDJy769qxu/HfqxoJRoVVwZj45N
+GXZENBMT1PqnZ1kWZfWOUXz+SMISHF1dO+sGP+kWKlHFtXXIxwEPrOwIrKGM7uv/
+HOk6nrMDzK+/iznfdUbC/Zv2wM0hsQEhumxSFmpvk5VyjvbMZtfeIU6PMaFFM22Q
+MyKL/KMS8o1dnNjLM9aJrunSppSMQxcHA9IyALbx6owG7VZ6DqCDibgbGkkWxaH3
+Rz6KFaGPpBOfLoZXKyi9rhBwPqOhspksGuLiucC/fltHb2GaTRnuiWUeDaoAZqx7
+2cliKcMb+tvLw19jClo/0PxhQgQ0HvyqidBihmArHdctIvJTrxe+olafDwwf0o5X
+DOFTLYqyyknPVqXOkYefzpVqu+DwnQqqUteYodhEu+TDBjhXXrHW8Q/xWlXkII34
+F53LI4TnCnCqalYduynFfWEepHhsulnvqxGCYr0lKF/oyEHSZlIfskZUbL/zwiqe
+0J1We95cONSV+Pi+qcLuQrkIv/r0J69VDoaalRZvLU1KreN1uXoheu/OPbqCV54l
+d0qlhQvlz3Q0fAjmuRYjJaHqV7+EYyijgSKj6zizrKU=
+				</Modulus>
+				<Exponent>AQAB</Exponent>
+			</RSAKeyValue>
+		</KeyValue>
+		<X509Data>
+			<X509IssuerSerial>
+				<X509IssuerName>CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1, O=DigiCert\, Inc., C=US</X509IssuerName>
+				<X509SerialNumber>14706073888503137188103110362569110662</X509SerialNumber>
+			</X509IssuerSerial>
+			<X509SubjectName>CN=Lenovo, OU=G08, O=Lenovo, L=Morrisville, ST=North Carolina, C=US</X509SubjectName>
+			<X509Certificate>
+MIIHZzCCBU+gAwIBAgIQCxBJbCiuHFJkq5OTfaf0hjANBgkqhkiG9w0BAQsFADBp
+MQswCQYDVQQGEwJVUzEXMBUGA1UEChMORGlnaUNlcn

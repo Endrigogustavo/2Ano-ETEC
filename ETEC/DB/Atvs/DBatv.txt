@@ -1,0 +1,132 @@
+A)	
+Entidade:
+	Produtos
+
+Atributos:
+	Codigo do Produto (PK)
+	
+	Preço
+	Nome
+	Material
+	Marca
+	Cor
+	Quantidade
+	Modelo
+	Descrição
+
+PK: o Codigo do produto é unico para cada produto.
+	
+
+
+B)
+Entidade:
+	Funcionarios
+
+Atributos:
+	Matricula (PK)
+
+	Nome
+	Salario
+	Carga Horaria
+	Cargo
+	RG
+	CPF
+	Endereço
+	Sexo
+	Data de Nascimento
+	Telefone
+	
+PK: A matricula é uma maneira de indentificar os funcionarios, tendo a mesma função do RM dos alunos das Etecs
+
+C)	
+Entidade:
+	Fornecedor
+
+Atributos:
+	ID (PK)
+
+	Telefone
+	Setor
+	Endereço
+	MEI
+	Tipo de tecido
+	Empresa fornecedora
+	cor
+	quantidade
+	peso
+	preço
+	CNPJ
+	Codigo do Produto
+PK: Por nao ter um tipo definido de chave primaria definico com poucos caracteres, o ID é utilizado
+
+
+D)	
+Entidade:
+	Departamento
+
+Atributos:
+	ID (PK)
+
+	Setores
+	Local
+	Tarefas
+	Gastos
+	Cargos
+	Carga horaria
+	Data de efetivação
+	Registros
+PK: Por nao ter um tipo definido de chave primaria definico com poucos caracteres, o ID é utilizado
+
+
+2)
+Entidade:
+	ConsultaMedica
+
+Atributo:
+	Data
+	Horario
+	Paciente
+	Genero
+
+
+
+
+
+
+Entidade:
+	Livro
+
+Atributo:
+	Data
+	Autor
+	Nome
+	Genero
+
+
+
+
+
+Entidade:
+	Filme
+
+Atributo:
+	Data
+	Horario
+	Duração
+	Genero
+	Ator
+	Diretor
+
+
+
+
+Entidade:
+	Filme
+
+Atributo:
+	Data
+	Horario
+	Duração
+	Genero
+	Ator
+	Diretor

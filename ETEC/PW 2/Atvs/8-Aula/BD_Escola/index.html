@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Drop Down Sidebar Menu | CodingLab </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+
+
+<body>
+  <div class="sidebar close">
+    <!--www.codingnepalweb.com -->
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <!--    <svg data-src="https://s2.svgbox.net/assets/logo-white.svg" 
+               width="50"
+               height="50" 
+               fill="purple">
+              </svg>
+            
+              <script type="text/javascript" src="https://unpkg.com/external-svg-loader@1.0.0/svg-loader.min.js" async></script>-->
+      <span class="logo_name">Menu</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="link_name">Pesquisar</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Category</a></li>
+          <!--alt click seleciona varios lugares para digitar ao memso tempo-->
+          <li><a href="#">Disciplina</a></li>
+          <li><a href="#">Curso</a></li>
+          <li><a href="#">Aluno</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Pesquisar</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Pesquisar</a></li>
+          <li><a href="#">Disciplina</a></li>
+          <li><a href="#">Curso</a></li>
+          <li><a href="#">Aluno</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">Excluir</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Excluir</a></li>
+          <li><a href="#">Disciplina</a></li>
+          <li><a href="#">Curso</a></li>
+          <li><a href="#">Aluno</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="link_name">Cadastro</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Posts</a></li>
+          <li><a href="#">Disciplina</a></li>
+          <li><a href="#">Curso</a></li>
+          <li><a href="#">Aluno</a></li>
+        </ul>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-plug' ></i>
+            <span class="link_name">Alterar</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Plugins</a></li>
+          <li><a href="#">Disciplina</a></li>
+          <li><a href="#">Curso</a></li>
+          <li><a href="#">Aluno</a></li>
+        </ul>
+      </li>
+      
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Loja de materiais</span>
+    </div>
+
+    <img src="fundo.png" class="rellax img1" data-rellax-speed="5" >
+    <div class="textotop">
+      <h1 class="multtext"></h1>
+      <h2 class="texton">Empresa dedicada a aula de PW da Prof</h2>
+      <h2> Edna com o tema PHP e MySql e suas diversas ligações e  </h2>
+      <h2>interaçoes com o banco de dados</h2>
+    </div>
+  </section>
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.10.0/rellax.js"></script>
+<script>
+  var rellax = new Rellax('.rellax')
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typingEffect = new Typed(".multtext",{
+    strings: ["Isso é Futuro","Isso é Vida","Isso é Programação","Isso é P-TECH"],
+    loop : true,
+    typeSpeed : 100,
+  })
+</script>
+</body>
+</html>

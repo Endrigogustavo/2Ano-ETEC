@@ -1,0 +1,31 @@
+   <stCamera:FocalLengthX>5.623703</stCamera:FocalLengthX>
+        <stCamera:FocalLengthY>5.623703</stCamera:FocalLengthY>
+        <stCamera:VignetteModelParam1>-91.900148</stCamera:VignetteModelParam1>
+        <stCamera:VignetteModelParam2>8451.217065</stCamera:VignetteModelParam2>
+        <stCamera:VignetteModelParam3>-453878.876021</stCamera:VignetteModelParam3>
+       </stCamera:VignetteModel>
+      </stCamera:PerspectiveModel>
+     </rdf:li>
+     <rdf:li rdf:parseType="Resource">
+      <stCamera:Author>Adobe Systems, Inc.</stCamera:Author>
+      <stCamera:Make>NIKON CORPORATION</stCamera:Make>
+      <stCamera:Model>NIKON D3X</stCamera:Model>
+      <stCamera:UniqueCameraModel>Nikon D3X</stCamera:UniqueCameraModel>
+      <stCamera:CameraRawProfile>True</stCamera:CameraRawProfile>
+      <stCamera:LensID>129</stCamera:LensID>
+      <stCamera:Lens>200.0 mm f/2.0</stCamera:Lens>
+      <stCamera:LensInfo>2000/10 2000/10 20/10 20/10</stCamera:LensInfo>
+      <stCamera:CameraPrettyName>NIKON D3X</stCamera:CameraPrettyName>
+      <stCamera:LensPrettyName>Nikon AF-S VR NIKKOR 200mm f/2G IF-ED</stCamera:LensPrettyName>
+      <stCamera:ProfileName>Adobe (Nikon AF-S VR NIKKOR 200mm f/2G IF-ED)</stCamera:ProfileName>
+      <stCamera:SensorFormatFactor>1</stCamera:SensorFormatFactor>
+      <stCamera:ImageWidth>6080</stCamera:ImageWidth>
+      <stCamera:ImageLength>4044</stCamera:ImageLength>
+      <stCamera:FocalLength>200</stCamera:FocalLength>
+      <stCamera:FocusDistance>10000</stCamera:FocusDistance>
+      <stCamera:ApertureValue>2.970854</stCamera:ApertureValue>
+      <stCamera:PerspectiveModel rdf:parseType="Resource">
+       <stCamera:Version>2</stCamera:Version>
+       <stCamera:FocalLengthX>5.623703</stCamera:FocalLengthX>
+       <stCamera:FocalLengthY>5.623703</stCamera:FocalLengthY>
+       <stCamera:RadialDistortParam1>0.778742</stCamera

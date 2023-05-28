@@ -1,0 +1,28 @@
+e Summary">
+      <ITEM ID="Start Month" type="1"/>
+      <ITEM ID="Temperature Control Exceed Count" type="1"/>
+    </TABLE>
+    <TABLE ID="Last Season Temperature Data">
+      <ITEM ID="Sensor" type="4"/>
+      <ITEM ID="55 to 59" type="1"/>
+      <ITEM ID="60 to 64" type="1"/>
+      <ITEM ID="65 to 70" type="1"/>
+      <ITEM ID="Maximum Temperature" type="1"/>
+    </TABLE>
+    <TABLE ID="Lifetime Temperature Summary">
+      <ITEM ID="Start Month" type="4"/>
+      <ITEM ID="Temperature Control Exceed Count" type="1"/>
+    </TABLE>
+    <TABLE ID="Lifetime Temperature Data">
+      <ITEM ID="Sensor" type="4"/>
+      <ITEM ID="55 to 59" type="1"/>
+      <ITEM ID="60 to 64" type="1"/>
+      <ITEM ID="65 to 70" type="1"/>
+      <ITEM ID="Maximum Temperature" type="1"/>
+    </TABLE>
+    <TABLE ID="Temperature Alerts">
+      <ITEM ID="Entry" type="1"/>
+      <ITEM ID="Reason" type="1"/>
+      <ITEM ID="Date" type="4"/>
+      <ITEM ID="Processor Temperature" type="1"/>
+     

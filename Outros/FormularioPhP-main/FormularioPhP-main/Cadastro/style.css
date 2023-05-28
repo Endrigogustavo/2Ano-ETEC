@@ -1,0 +1,58 @@
+.container{
+   width: 90%;
+}
+body{
+    background-color: #cccccc;
+}
+#fprinci{
+    background-color: white;
+    padding: 0%;
+}
+.fundo{
+
+background-color: #007bff;
+
+}
+.formulario{
+
+    margin: 2%;
+    padding-bottom: 1%;
+ 
+}
+.row{
+    margin: 0;
+}
+
+.Dados{
+    padding-top: 2%;
+    padding-bottom: 4%;
+    padding-left: 0%;
+    margin-left: 30%;
+    margin-right: 25%;
+}
+
+p.TPrincipal{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 3%;
+    padding-left: 0;
+}
+.table>:not(caption)>*>* {
+    
+   
+    text-align: center;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+.table {
+    width: 95%;
+    
+}
+
+.table-responsive {
+    padding-left: 0%;
+   
+}
+th{
+    background-color: #007bff !important;
+}

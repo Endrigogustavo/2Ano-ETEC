@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="txtname">Nome</string>
+    <string name="txtnomemsg">Digite o nome </string>
+
+</resources>

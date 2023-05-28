@@ -1,0 +1,49 @@
+"Flash Over LAN Count" type="1"/>
+      <ITEM ID="eFlash Count" type="1"/>
+    </TABLE>
+    <TABLE ID="POST Error Log">
+      <ITEM ID="Entry" type="1"/>
+      <ITEM ID="Error Code" type="1"/>
+      <ITEM ID="Date" type="4"/>
+    </TABLE>
+    <TABLE ID="Flash Status Log">
+      <ITEM ID="Flash Count" type="1"/>
+    </TABLE>
+    <TABLE ID="Battery Info">
+      <ITEM ID="Location" type="4"/>
+      <ITEM ID="Bar Code" type="4"/>
+      <ITEM ID="First Day Used" type="1"/>
+      <ITEM ID="Cycle Count" type="1"/>
+    </TABLE>
+    <TABLE ID="Battery Error Source">
+      <ITEM ID="Error Source" type="4"/>
+    </TABLE>
+    <TABLE ID="Battery Error Log">
+      <ITEM ID="Error Type" type="4"/>
+      <ITEM ID="Date" type="4"/>
+      <ITEM ID="Capacity" type="1"/>
+      <ITEM ID="Temperature" type="1"/>
+      <ITEM ID="Voltage" type="1"/>
+      <ITEM ID="Status" type="1"/>
+    </TABLE>
+    <TABLE ID="Hard Disk Drive Data">
+      <ITEM ID="APS Lifetime Head Unload Count" type="1"/>
+      <ITEM ID="Date and Time of First Log" type="4"/>
+      <ITEM ID="Hard Disk ID" type="1"/>
+      <ITEM ID="APS Head Unload Count" type="1"/>
+      <ITEM ID="SMART Head Unload Count" type="1"/>
+      <ITEM ID="SMART Power On Hours" type="1"/>
+    </TABLE>
+    <TABLE ID="LCD Data Log">
+      <ITEM ID="Total LCD On Time" type="1"/>
+      <ITEM ID="Total Backlight on Time" type="1"/>
+      <ITEM ID="Lid Switch Count" type="1"/>
+    </TABLE>
+    <TABLE ID="Current Thermal Information">
+      <ITEM ID="Current Processor Temperature" type="1"/>
+      <ITEM ID="Processor Temperature Status" type="1"/>
+      <ITEM ID="Environment Temperature Status" type="1"/>
+      <ITEM ID="Thermal Mode" type="1"/>
+      <ITEM ID="Fan 1 Status" type="1"/>
+      <ITEM ID="Fan 2 Status" type="1"/>
+ 

@@ -1,0 +1,5 @@
+where = 3 parametros
+
+Campo
+Operador
+Valor

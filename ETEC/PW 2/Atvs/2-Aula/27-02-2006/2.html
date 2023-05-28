@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Cadastro aluno</title>
+</head>
+<body>
+
+    <form action="2.php" method="POST" >
+        <fieldset style="width: 40%">
+            <legend>
+                Dados pessoais
+            </legend>
+            Nome <input type="text" name="txtnome" size="20" maxlength="14"><br>
+
+            Telefone <input type="text" name="txttelefone" size="20" maxlength="14"><br>
+
+            RG <input type="text" name="txtRG" size="20" maxlength="15"><br>
+
+        </fieldset>
+
+  <fieldset style="width: 40%">
+            <legend>
+                Dados Escolares
+            </legend>
+            Curso <select name="cbocursos">
+                <option value="Informatica">Informatica</option>
+                <option value="Administracao">Administracao</option>
+                <option value="Enfermagem">Enfermagem</option>
+                <option value="Alimentos">Alimentos</option>
+           </select> <br>
+           modulo<input type="text" name="txtmodulo" size="10">
+        </fieldset>
+        
+        <fieldset style="width: 40%">
+            <legend>
+                Opcoes
+            </legend>
+
+            <input type="submit" value="confirmar"><br>
+            <input type="reset" value="Limpar"><br>
+
+        </fieldset>
+
+      
+    </form>
+    
+</body>
+</html>
