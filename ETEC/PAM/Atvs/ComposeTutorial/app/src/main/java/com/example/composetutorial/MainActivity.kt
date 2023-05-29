@@ -50,33 +50,24 @@ data class Message(val author: String, val body: String)
 
 @Composable
 fun MessageCard(msg: Message) {
-    // Adiciona margem a message
     Row(modifier = Modifier.padding(all = 8.dp)) {
         Image(
             painter = painterResource(R.drawable.profile_picture),
             contentDescription = null,
             modifier = Modifier
-                // deixa  a imagem em 40 dp
                 .size(40.dp)
-                // Faz com que a imagem tenha um formato de circulo
                 .clip(CircleShape)
 
                 .border(1.5.dp, MaterialTheme.colorScheme.secondary, CircleShape)
         )
 
-        // Adiciona um espaço horizontal entre a imagem e a coluna
+
         Spacer(modifier = Modifier.width(8.dp))
-
-
-        // Aqui nós verificamos se a mensagem está expandida ou não nessa
-        // variavel
         var isExpanded by remember { mutableStateOf(false) }
-        // surfaceColor vai ser atualizada gradativamente de uma cor para a outra
         val surfaceColor by animateColorAsState(
             if (isExpanded) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
         )
 
-        // Nós ativamos a variavel isExpanded qunado clicarmos nessa coluna
         Column(modifier = Modifier.clickable { isExpanded = !isExpanded }) {
             Text(
                 text = msg.author,
@@ -89,16 +80,12 @@ fun MessageCard(msg: Message) {
             Surface(
                 shape = MaterialTheme.shapes.medium,
                 shadowElevation = 1.dp,
-                // surfaceColor a cor vai mudar gradativamente entre a primary to surface
                 color = surfaceColor,
-                // animateContentSize vai mudar o tamanho da Surface gradualmente
                 modifier = Modifier.animateContentSize().padding(1.dp)
             ) {
                 Text(
                     text = msg.body,
                     modifier = Modifier.padding(all = 4.dp),
-                    // Se a menssagem é expandida, nós mostramos toddo esse conteudo
-                    // caso contrário nós apenas apresentamos a primeira linha
                     maxLines = if (isExpanded) Int.MAX_VALUE else 1,
                     style = MaterialTheme.typography.bodyMedium
                 )
@@ -107,7 +94,6 @@ fun MessageCard(msg: Message) {
             }
         }
 
-//light mode dark mode//
 @Preview(name = "Light Mode")
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_YES,
@@ -126,7 +112,7 @@ fun PreviewMessageCard() {
 }
 
 
-//lista de mensagens//
+
 @Composable
 fun Conversation(messages: List<Message>) {
     LazyColumn {
