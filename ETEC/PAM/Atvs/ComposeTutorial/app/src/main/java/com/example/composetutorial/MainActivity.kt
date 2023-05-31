@@ -52,7 +52,7 @@ data class Message(val author: String, val body: String)
 fun MessageCard(msg: Message) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
         Image(
-            painter = painterResource(R.drawable.profile_picture),
+            painter = painterResource(R.drawable.goku),
             contentDescription = null,
             modifier = Modifier
                 .size(40.dp)

@@ -4,8 +4,8 @@ object SampleData {
     // Sample conversation data
     val conversationSample = listOf(
         Message(
-            "Colleague",
-            "Test...Test...Test..."
+            "Endrigo",
+            "Teste Atv-PAM"
         ),
         Message(
             "Colleague",
