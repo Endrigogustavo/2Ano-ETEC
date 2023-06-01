@@ -19,7 +19,7 @@ import javax.swing.text.MaskFormatter;
 public class Ex3 extends JFrame {
 
 
-    JButton copiar, limpar, sair;
+    JButton enviar, limpar, sair;
     JLabel rotulo, rotulo3, rotulo5, rotulo6;
     JTextField texto1, texto2;
     JComboBox lista;
@@ -30,7 +30,7 @@ public class Ex3 extends JFrame {
     JScrollPane painelrolagem;
     JPanel painel;
 
-    String estado[] = {"Solteiro (a)", "Casado (a)", "Divorciado (a)", "Viúvo (a)"};
+    String estado[] = {"Selecionar","Diurno", "Vespertino", "Noturno"};
 
     public Ex3() {
         super("Ex3");
@@ -42,7 +42,7 @@ public class Ex3 extends JFrame {
         rotulo6 = new JLabel("Matricula: ");
         texto1 = new JTextField(20);
         texto2 = new JTextField(10);
-        copiar = new JButton("Enviar");
+        enviar = new JButton("Enviar");
         limpar = new JButton("Limpar");
         sair = new JButton("Sair");
         lista = new JComboBox(estado);
@@ -70,19 +70,56 @@ public class Ex3 extends JFrame {
     tela.add(rotulo);
     tela.add(painel);
     
-        copiar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        enviar.addActionListener(new ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
 
-                texto2.setText(texto1.getText().toLowerCase());
+        // criar variaveis que representam dados
+        String cursoe="", seriee="";
+        String nomee=texto1.getText();
+        String matrice =texto2.getText();
+        String restre=texto.getText();
+        
+        String perioe=lista.getSelectedItem().toString();
+        
+        if(tam1.isSelected())
+            seriee= tam1.getText();
+        else
+             if(tam2.isSelected())
+            seriee= tam2.getText();
+        else
+                  if(tam3.isSelected())
+            seriee= tam3.getText();
+
+                      
+             if(tam11.isSelected())
+            cursoe= tam11.getText();       
+        else
+          if(tam22.isSelected())
+            cursoe= tam22.getText();        
+        else
+            cursoe= tam33.getText();   
+          
+
+            frmMostrar mostrar = new frmMostrar(nomee, matrice, cursoe,  seriee,  perioe, restre);
+            mostrar.setVisible(true);
+            dispose();
             }
         });
         
          sair.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                
+                int opcao;
+                    Object[] botoes = {"Sim","Não"};
+                    opcao = JOptionPane.showOptionDialog(null,"Deseja mesmo fechar a janela?","Fechar",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,botoes,botoes[0]);
+                    if (opcao==JOptionPane.YES_OPTION)
+                         System.exit(0);
+   
+            }});
 
-                System.exit(0);
-            }
-        });
+         
+            
+     
          
          
         limpar.addActionListener(new ActionListener() {
@@ -97,7 +134,7 @@ public class Ex3 extends JFrame {
             }
         });
         try {
-            mcep = new MaskFormatter("#####-###");
+            mcep = new MaskFormatter("#######");
             mcep.setPlaceholderCharacter('_');
            
         } catch (ParseException e) {
@@ -111,7 +148,7 @@ public class Ex3 extends JFrame {
         rotulo6.setBounds(20, 60, 50, 20);
         texto1.setBounds(60, 30, 180, 20);
         texto2.setBounds(60, 60, 70, 20);
-        copiar.setBounds(30, 270, 100, 20);
+        enviar.setBounds(30, 270, 100, 20);
         limpar.setBounds(170, 270, 100, 20);
         sair.setBounds(320, 270, 100, 20);
         tam1.setBounds(30, 110, 100, 20);
@@ -121,11 +158,8 @@ public class Ex3 extends JFrame {
         tam22.setBounds(150, 130, 100, 20);
         tam33.setBounds(150, 150, 100, 20);
       
-        copiar.setToolTipText("Botão que deixa a fonte maiúscula e minúscula");
-        limpar.setToolTipText("Botão que limpa o texto");
-        rotulo.setText("Criado por Endrigo  2 ds");
 
-        copiar.setMnemonic(KeyEvent.VK_F1);
+        enviar.setMnemonic(KeyEvent.VK_F1);
         limpar.setMnemonic(KeyEvent.VK_F2);
         
 
@@ -135,7 +169,7 @@ public class Ex3 extends JFrame {
         tela.add(rotulo6);
         tela.add(texto1);
         tela.add(texto2);
-        tela.add(copiar);
+        tela.add(enviar);
         tela.add(limpar);
         tela.add(lista);
         tela.add(tam1);
@@ -146,12 +180,6 @@ public class Ex3 extends JFrame {
         tela.add(tam33);
         tela.add(sair);
 
-        copiar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Seu nome é " + texto1.getText() + "\n Sua idade é " + texto2.getText() + "\n E seu estado civil é " + lista.getSelectedItem().toString());
-            }
-        });
-
         setSize(540, 430);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -160,58 +188,10 @@ public class Ex3 extends JFrame {
 
       public static void main(String args[]) {
         Ex3 app = new Ex3();
-        java.awt.EventQueue.invokeLater(new Runnable(){
-        
 
-            public void run() {
-               //To change body of generated methods, choose Tools | Templates.
-            }
-    });
+        
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
-    //alt shift F edenta tudo
-    public void btn_Mostrat(java.awt.event.ActionEvent evt){
-        // criar variaveis que representam dados
-        String cursoe="", seriee="";
-        String nomee=texto1.getText();
-        String matrice =texto2.getText();
-        String restre=texto.getText();
-        
-        String perioe=lista.getSelectedItem().toString();
-        
-        if(tam1.isSelected()){
-            seriee= tam1.getText();
-        }
-        else{
-             if(tam2.isSelected()){
-            seriee= tam2.getText();
-        }
-        else{
-                  if(tam3.isSelected()){
-            seriee= tam3.getText();
-        }
-        else{
-                       if(tam11.isSelected()){
-            seriee= tam11.getText();
-        }
-        else{
-          if(tam22.isSelected()){
-            seriee= tam22.getText();
-        }
-        else{{
-            seriee= tam33.getText();   
-        }   
-        }   
-        }
-            
-        }
-            
-             }
-        }
-    }
-    
-    frmMostrar mostra = new frmMostrar(nomee, matrice, restre, perioe, cursoe, seriee);
-    mostrar.setVisible(true);
-    dispose();
 }
+    
+  
