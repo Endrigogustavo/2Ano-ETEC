@@ -134,7 +134,7 @@ public class Ex3 extends JFrame {
             }
         });
         try {
-            mcep = new MaskFormatter("#######");
+            mcep = new MaskFormatter("#####");
             mcep.setPlaceholderCharacter('_');
            
         } catch (ParseException e) {
