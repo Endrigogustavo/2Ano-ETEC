@@ -96,7 +96,7 @@ CREATE TABLE `livro` (
 --
 
 INSERT INTO `livro` (`Cod_livro`, `Titulo`, `Categoria`, `ISBN`, `Idioma`, `QtdePag`) VALUES
-(1, 'Por Que o Brasil Elegeu o Bolsonaro?', 'Filosofia', '978-85-8302-040-0', 'Português', 120),
+(1, 'As 48 leis do poder', 'Filosofia', '978-85-8302-040-0', 'Português', 120),
 (2, 'O Diário Perdido de Gravity Falls', 'Fantasia', '965-98-4172-143-8', 'Português', 288),
 (3, 'Espíritos De Fato Existem?', 'Filosofia', '923-08-8734-365-7', 'Português', 150),
 (4, 'Harry Potter e a Pedra Filosofal', 'Fantasia', '875-54-9672-366-6', 'Português', 264),
