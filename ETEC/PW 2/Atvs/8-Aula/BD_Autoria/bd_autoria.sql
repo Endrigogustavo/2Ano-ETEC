@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `autor`
 --
 
+CREATE DATABASE `bd_autoria`;
+
+USE `bd_autoria`;
+
 CREATE TABLE `autor` (
   `Cod_Autor` int(11) NOT NULL,
   `NomeAutor` varchar(30) NOT NULL,
