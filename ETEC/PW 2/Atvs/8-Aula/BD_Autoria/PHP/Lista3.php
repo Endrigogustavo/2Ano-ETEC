@@ -10,7 +10,7 @@
 
     <?php
 
-    include_once 'Autor.php';
+    include_once 'Livro.php';
     $p = new Produto();
     $pro_bd=$p-> listar();
     ?>

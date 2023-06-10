@@ -44,13 +44,13 @@ CREATE TABLE `autor` (
 --
 
 INSERT INTO `autor` (`Cod_Autor`, `NomeAutor`, `Sobrenome`, `email`, `Nasc`) VALUES
-(1, 'Machado', 'de Assis', 'machadossis@Hotmail.com', '1839-06-21'),
-(2, 'Joanne', 'Rowling', 'joanne.row@gmail.com', '1965-07-31'),
+(1, 'Machado', 'de Assis', 'machadossis@gmail.com', '1839-06-21'),
+(2, 'Joanne', 'Rowling', 'joanne@gmail.com', '1965-07-31'),
 (3, 'Willian', 'Sheakespeare', 'williansh@gmail.com', '1564-04-23'),
-(4, 'Stephan', 'Perry', 'residentbevil@umbrella.com', '1970-03-14'),
-(5, 'Alex ', 'Hirsch', 'alexdipper@gmail.com', '1985-06-18'),
-(6, 'Tatsuki', 'Fujimoto', 'danrandan@yahoo.com.br', '1993-10-10'),
-(7, 'Marlon', 'Marques Da Silva', 'marlon.silva52@etec.sp.gov.br', '1983-12-31');
+(4, 'Stephan', 'Perry', 'residentbevil@gmail.com', '1970-03-14'),
+(5, 'Tomás', ' Antônio Gonzaga', 'tomas02@gmail.com', '1744-06-18'),
+(6, 'sun', 'tzu', 'suntzu@gmail.com', '544 a.C.'),
+(7, 'Marlon', 'Marques Da Silva', 'marlon.silva52@gmail.com', '1983-12-31');
 
 -- --------------------------------------------------------
 
@@ -70,14 +70,14 @@ CREATE TABLE `autoria` (
 --
 
 INSERT INTO `autoria` (`cod_livro`, `cod_autor`, `datalancamento`, `editoria`) VALUES
-(2, 1, ' 1601-02', 'Editora do Brasil S/'),
-(3, 3, '1899', 'Editora do Brasil S/'),
-(4, 7, '29 de jane', 'Editora do Brasil S/'),
-(4, 7, '29 de jane', 'Editora do Brasil S/'),
-(2, 3, ' 1601-02', 'Editora do Brasil S/'),
-(1, 7, '1591 e 159', 'Editora do Brasil S/'),
-(3, 1, '1899', 'Editora do Brasil S/'),
-(1, 3, '1591 e 159', 'Editora do Brasil S/');
+(2, 1, ' 1601-02', 'Editora Record'),
+(3, 3, '1899', 'Editora Record'),
+(4, 7, '29 de jane', 'Moderna'),
+(4, 7, '29 de jane', 'Editora do Brasil'),
+(2, 3, ' 1601-02', 'Editora Brasiliense'),
+(1, 7, '1591 e 159', 'Editora Record'),
+(3, 1, '1899', 'Editora Brasiliense'),
+(1, 3, '1591 e 159', 'Editora Record');
 
 -- --------------------------------------------------------
 
@@ -100,10 +100,10 @@ CREATE TABLE `livro` (
 
 INSERT INTO `livro` (`Cod_livro`, `Titulo`, `Categoria`, `ISBN`, `Idioma`, `QtdePag`) VALUES
 (1, 'As 48 leis do poder', 'Filosofia', '978-85-8302-040-0', 'Português', 120),
-(2, 'O Diário Perdido de Gravity Falls', 'Fantasia', '965-98-4172-143-8', 'Português', 288),
+(2, 'O Poder da fala', 'Fantasia', '965-98-4172-143-8', 'Português', 288),
 (3, 'Espíritos De Fato Existem?', 'Filosofia', '923-08-8734-365-7', 'Português', 150),
-(4, 'Harry Potter e a Pedra Filosofal', 'Fantasia', '875-54-9672-366-6', 'Português', 264),
-(5, 'Resident Evil Code:Veronica', 'Terror', '167-23-2857-534-7', 'Português', 78);
+(4, 'Sun Tzu a arte da guerra', 'Fantasia', '875-54-9672-366-6', 'Português', 264),
+(5, 'Uma noite de terror', 'Terror', '167-23-2857-534-7', 'Português', 78);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

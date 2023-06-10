@@ -4,19 +4,20 @@ include_once 'Conectar.php';
 //parte 1 - atributos
 
 class Produto{
-    private $id_autor;
+    private $Cod_livro;
     private $nome;
     private $sobre;
     private $email;
     private $nas;
+    private $nas;
     private $conn;
 
     // parte 2 - os getters e setters
-    function getid_autor(){
-        return $this->id_autor;
+    function getCod_livro(){
+        return $this->Cod_livro;
     } 
-    function setid_autor($iid_autor){
-        $this->id_autor = $iid_autor;
+    function setCod_livro($iCod_livro){
+        $this->Cod_livro = $iid_autor;
     }
     function getsobre(){
         return $this->sobre;
@@ -57,7 +58,7 @@ class Produto{
     function listar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->query("Select * from autor order by NomeAutor");
+            $sql = $this->conn->query("Select * from livro order by Titulo");
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;
