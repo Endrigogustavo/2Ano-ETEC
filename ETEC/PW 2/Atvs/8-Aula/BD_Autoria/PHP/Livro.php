@@ -5,11 +5,11 @@ include_once 'Conectar.php';
 
 class Produto{
     private $Cod_livro;
-    private $nome;
-    private $sobre;
-    private $email;
-    private $nas;
-    private $nas;
+    private $Titulo;
+    private $Categoria;
+    private $ISBN;
+    private $Idioma;
+    private $QtdePag;
     private $conn;
 
     // parte 2 - os getters e setters
@@ -17,25 +17,37 @@ class Produto{
         return $this->Cod_livro;
     } 
     function setCod_livro($iCod_livro){
-        $this->Cod_livro = $iid_autor;
+        $this->Cod_livro = $iCod_livro;
     }
-    function getsobre(){
-        return $this->sobre;
+    function getTitulo(){
+        return $this->Titulo;
     } 
-    function setsobre($sobre){
-        $this->sobre = $sobre;
+    function setTitulo($Titulo){
+        $this->Titulo = $Titulo;
     }
-    function getemail(){
-        return $this->email;
+    function getCategoria(){
+        return $this->Categoria;
     } 
-    function setemail($emaill){
-        $this->email = $emaill;
+    function setCategoria($Categoriaa){
+        $this->Categoria = $Categoaria;
     }
-    function getnas(){
-        return $this->nas;
+    function getISBN(){
+        return $this->ISBN;
     } 
-    function setnas($nass){
-        $this->nas = $nass;
+    function setISBN($ISBNs){
+        $this->ISBN = $ISBNs;
+    }
+    function getIdioma(){
+        return $this->Idioma;
+    } 
+    function setIdioma($Idiomas){
+        $this->Idioma = $Idiomas;
+    }
+    function getQtdePag(){
+        return $this->QtdePag;
+    } 
+    function setQtdePag($QtdePags){
+        $this->QtdePag = $QtdePags;
     }
     
     

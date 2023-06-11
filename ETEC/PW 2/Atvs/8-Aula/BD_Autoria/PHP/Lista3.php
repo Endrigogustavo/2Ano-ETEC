@@ -14,7 +14,7 @@
     $p = new Produto();
     $pro_bd=$p-> listar();
     ?>
-    <b> Id &nbsp;&nbsp;&nbsp;&nbsp; Nome &nbsp;&nbsp;&nbsp;&nbsp; Estoque</b>
+    <b> cod &nbsp;&nbsp;&nbsp;&nbsp; Titulo &nbsp;&nbsp;&nbsp;&nbsp; categoria&nbsp;&nbsp;&nbsp;&nbsp; ISBN &nbsp;&nbsp;&nbsp;&nbsp; Idioma&nbsp;&nbsp;&nbsp;&nbsp; Quantidade pag</b>
     
     <?php
         foreach($pro_bd as $pro_mostrar){
@@ -23,6 +23,9 @@
             <b> <?php echo $pro_mostrar[0]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
                 <?php echo $pro_mostrar[1]; ?>    &nbsp;&nbsp;&nbsp;&nbsp;
                 <?php echo $pro_mostrar[2]; ?>
+                <?php echo $pro_mostrar[3]; ?>
+                <?php echo $pro_mostrar[4]; ?>
+                <?php echo $pro_mostrar[5]; ?>
             <?php
         }
             echo "<br><br><button><a href = '../index.html'>Voltar </a></button> "; ?>
