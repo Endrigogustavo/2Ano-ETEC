@@ -158,12 +158,12 @@ public class Menu extends JFrame{
                 
                 
                 String icones[] = {
-                    "imagens/direita.gif",
-                    "imagens/esquerda.gif",
-                    "imagens/centro.gif",
-                    "imagens/recortar.gif",
-                    "imagens/copiar.gif",
-                    "imagens/colar.gif"};
+                    "src/img/1.png",
+                    "src/img/2.png",
+                    "src/img/3.png",
+                    "src/img/4.png",
+                    "src/img/5.png",
+                    "src/img/6.png"};
                 imagens = new ImageIcon[6];
                 for(int i=0;i<6;i++)
                 {
