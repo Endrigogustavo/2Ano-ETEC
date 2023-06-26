@@ -14,8 +14,8 @@ public class Atv extends JFrame{
     
     //19.2–Menuexecutandoações
     JMenuBar barra;
-    JMenu opcoes,C,Conta;
-    JMenuItem Sobre,sair,Soma,Sub,Div,Mult;
+    JMenu opcoes,C,Conta,Sobre,sair;
+    JMenuItem Soma,Sub,Div,Mult,Sobre1,sair1;
     JPanel painel;
      
     JToolBar barra2;
@@ -35,28 +35,35 @@ public class Atv extends JFrame{
         barra = new JMenuBar();
         setJMenuBar(barra);
         opcoes = new JMenu("Opcoes");
+        sair = new JMenu("Sair");
+        Sobre = new JMenu("Sobre");
         barra.add(opcoes);
-        Sobre = new JMenuItem("Sobre");
+        barra.add(Sobre);
+        barra.add(sair);
+
         C = new JMenu("Outros");
         Conta = new JMenu("Conta");
         Soma = new JMenuItem("Soma");
         Sub = new JMenuItem("Subtração");
         Div = new JMenuItem("Divisao");
         Mult = new JMenuItem("Multiplicação");
-        sair = new JMenuItem("Sair");
+        
+        Sobre1 = new JMenuItem("Sobre");
+        sair1 = new JMenuItem("Sair");
+
         opcoes.setMnemonic(KeyEvent.VK_O);
         Sobre.setMnemonic(KeyEvent.VK_L);
         C.setMnemonic(KeyEvent.VK_F);
         sair.setMnemonic(KeyEvent.VK_S);
         Conta.setMnemonic(KeyEvent.VK_C);
-        opcoes.add(Sobre);
         opcoes.add(C);
         opcoes.addSeparator();
-        opcoes.add(sair);
         Conta.add(Soma);
         Conta.add(Sub);
         Conta.add(Div);
         Conta.add(Mult);
+        Sobre.add(Sobre1);
+        sair.add(sair1);
         C.add(Conta);
         painel = new JPanel();
         painel.setBounds(30,50,900,700);
@@ -112,7 +119,7 @@ public class Atv extends JFrame{
                     
                    
         
-         sair.addActionListener(new ActionListener()
+         sair1.addActionListener(new ActionListener()
                 {
                     public void actionPerformed(ActionEvent e)
                     {
@@ -154,7 +161,7 @@ public class Atv extends JFrame{
                         dispose();}
                     });
          
-           sair.addActionListener(new ActionListener()
+           sair1.addActionListener(new ActionListener()
                 {
                     public void actionPerformed(ActionEvent e)
                     {
@@ -198,7 +205,7 @@ public class Atv extends JFrame{
          
           
           
-          Sobre.addActionListener(new ActionListener()
+          Sobre1.addActionListener(new ActionListener()
                 {
                     public void actionPerformed(ActionEvent e)
                     {
