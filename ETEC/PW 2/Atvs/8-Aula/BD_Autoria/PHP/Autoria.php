@@ -32,7 +32,7 @@ class Produto{
     function geteditoria(){
         return $this->editoria;
     } 
-    function seteditoria($neditoriaa){
+    function seteditoria($editoriaa){
         $this->editoria = $editoriaa;
     }
     
@@ -42,9 +42,9 @@ class Produto{
     function salvar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("insert into produto values (null,?,?)");
-            $sql->bindParam(1, $this->getNome(), PDO::PARAM_STR);
-            $sql->bindParam(2, $this->getEstoque(), PDO::PARAM_STR);
+            $sql = $this->conn->prepare("insert into autoria values (null,null,?,?)");
+            @$sql->bindParam(1, $this->getdatalancamento(), PDO::PARAM_STR);
+            @$sql->bindParam(2, $this->geteditoria(), PDO::PARAM_STR);
             if($sql->execute() == 1){
                 return "Registro salvo com sucesso!";
             }

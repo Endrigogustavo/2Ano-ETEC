@@ -24,8 +24,8 @@
     {
         include_once 'Autoria.php';
         $pro = new Produto();
-        $pro -> setNome($txtnome);
-        $pro -> setEstoque($txtestoq);
+        $pro -> setdatalancamento($txtnome);
+        $pro -> seteditoria($txtestoq);
         $pro->salvar();
     }
     ?>

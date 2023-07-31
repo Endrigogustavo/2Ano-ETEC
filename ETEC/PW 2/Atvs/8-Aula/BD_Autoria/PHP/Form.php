@@ -8,6 +8,8 @@
             <legend> Cadastras</legend>
             <p>Nome: <input type="text" name="txtnome"></p>
             <p>Estoque: <input type="text" name="txtestoq"></p>
+            <p>Estoque: <input type="text" name="txtestoq1"></p>
+            <p>Estoque: <input type="text" name="txtestoq2"></p>
         </fieldset>
         <br>
         <fieldset class="b">
@@ -24,8 +26,10 @@
     {
         include_once 'Autor.php';
         $pro = new Produto();
-        $pro -> setNome($txtnome);
-        $pro -> setEstoque($txtestoq);
+        $pro -> setid_autor($txtnome);
+        $pro -> setsobre($txtestoq);
+        $pro -> setemail($txtestoq1);
+        $pro -> setnas($txtestoq2);
         $pro->salvar();
     }
     ?>
