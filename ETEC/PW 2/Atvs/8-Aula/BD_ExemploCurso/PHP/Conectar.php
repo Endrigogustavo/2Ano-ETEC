@@ -5,7 +5,7 @@ class Conectar extends PDO{
     private $host = "localhost";
     private  $usuario = "root";
     private  $senha = "";
-    private  $db = "exemplocurso2";
+    private  $db = "exemplocurso";
 
     public function __construct(){
         parent:: __construct("mysql:host=$this->host;dbname=$this->db","$this->usuario","$this->senha");
