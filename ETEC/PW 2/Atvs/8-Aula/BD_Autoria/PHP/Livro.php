@@ -56,9 +56,12 @@ class Produto{
     function salvar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("insert into produto values (null,?,?)");
-            $sql->bindParam(1, $this->getNome(), PDO::PARAM_STR);
-            $sql->bindParam(2, $this->getEstoque(), PDO::PARAM_STR);
+            $sql = $this->conn->prepare("insert into produto values (null,?,?,?,?,?)");
+            $sql->bindParam(1, $this->getTitulo(), PDO::PARAM_STR);
+            $sql->bindParam(2, $this->getCategoria(), PDO::PARAM_STR);
+            $sql->bindParam(3, $this->getISBN(), PDO::PARAM_STR);
+            $sql->bindParam(4, $this->getIdioma(), PDO::PARAM_STR);
+            $sql->bindParam(5, $this->getQtdePag(), PDO::PARAM_STR);
             if($sql->execute() == 1){
                 return "Registro salvo com sucesso!";
             }

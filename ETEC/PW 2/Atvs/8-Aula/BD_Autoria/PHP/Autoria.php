@@ -42,9 +42,11 @@ class Produto{
     function salvar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("insert into autoria values (null,null,?,?)");
-            @$sql->bindParam(1, $this->getdatalancamento(), PDO::PARAM_STR);
-            @$sql->bindParam(2, $this->geteditoria(), PDO::PARAM_STR);
+            $sql = $this->conn->prepare("insert into autoria values (?,?,?,?)");
+            @$sql->bindParam(1, $this->getcod_autor(), PDO::PARAM_STR);
+            @$sql->bindParam(2, $this->getcod_livro(), PDO::PARAM_STR);
+            @$sql->bindParam(3, $this->getdatalancamento(), PDO::PARAM_STR);
+            @$sql->bindParam(3, $this->geteditoria(), PDO::PARAM_STR);
             if($sql->execute() == 1){
                 return "Registro salvo com sucesso!";
             }

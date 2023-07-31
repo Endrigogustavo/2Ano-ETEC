@@ -8,6 +8,10 @@
             <legend> Cadastras</legend>
             <p>Nome: <input type="text" name="txtnome"></p>
             <p>Estoque: <input type="text" name="txtestoq"></p>
+            <p>Estoque: <input type="text" name="txtestoq1"></p>
+            <p>Estoque: <input type="text" name="txtestoq2"></p>
+            <p>Estoque: <input type="text" name="txtestoq3"></p>
+
         </fieldset>
         <br>
         <fieldset class="b">
@@ -24,8 +28,11 @@
     {
         include_once 'Livro.php';
         $pro = new Produto();
-        $pro -> setNome($txtnome);
-        $pro -> setEstoque($txtestoq);
+        $pro -> setTitulo($txtnome);
+        $pro -> setCategoria($txtestoq);
+        $pro -> setISBN($txtestoq1);
+        $pro -> setIdioma($txtestoq2);
+        $pro -> setQtdePag($txtestoq3);
         $pro->salvar();
     }
     ?>
