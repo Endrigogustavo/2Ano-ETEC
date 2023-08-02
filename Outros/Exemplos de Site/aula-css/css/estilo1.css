@@ -1,0 +1,30 @@
+.borda{
+  border:  1px solid red;
+}
+p{
+  display:inline;}
+h1{
+  display:inline;}
+
+  #p1{
+    Display:block;}
+    #p1:hover{display:none;}
+
+
+    .azul{
+      background: blue;
+
+    }
+    .vermelho{
+      background: rgb(219, 8, 1);
+    }
+    .verde{
+      background: rgb(2, 73, 38);
+    }
+
+    div{
+      display:inline-block;
+      WIDTH:20%;
+      height:150px;
+
+    }

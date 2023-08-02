@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Parallax</title>
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+    </head>
+    <body>
+        <header>
+<a href="#" class="logo">logo</a>
+<ul>
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Work</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+        </header>
+        <section>
+            <img src="../img/stars.png" id="stars">
+            <img src="../img/moon.png" id="moom">
+            <img src="../img/mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moom light</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src="../img/mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling Effects</h2>
+            <P>In Spider-Man's first story, in Marvel Comics' Amazing Fantasy, no.
+                 15 (1962), American teenager Peter Parker, a poor sickly orphan,
+                  is bitten by a radioactive spider. As a result of the bite,
+                   he gains superhuman strength, speed, and agility along with the ability
+                    to cling to walls.
+                    <br><br>Spider-Man is a superhero appearing in American comic books published by Marvel Comics.
+                     Created by writer-editor Stan Lee and artist Steve Ditko, he first appeared in the anthology comic
+                      book Amazing Fantasy #15 (August 1962) in the Silver Age of Comic Books. He has since been featured
+                       in films, television shows, video games, and plays. Spider-Man is the alias of Peter Parker, an orphan raised by his Aunt May and Uncle Ben in New York City after his parents Richard and 
+                       Mary Parker died in a plane crash. Lee and Ditko had the character deal with the struggles of adolescence and financial issues and gave him many supporting characters, such as Flash Thompson,
+                        J. Jonah Jameson, and Harry Osborn; romantic interests Gwen Stacy, Mary Jane Watson, and the Black Cat; and foes such as Doctor Octopus, the Green Goblin, and Venom. In his origin story,
+                         Spider-Man gets superhuman spider-related powers and abilities from a bite from a radioactive spider; these include clinging to surfaces, superhuman strength, speed, and agility, and detecting danger with his
+                          "spider-sense." He also builds wrist-mounted "web-shooter" devices that shoot artificial spider webs of his own design.</P><br><br>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moom = document.getElementById('moom');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll',function(){
+              let value = window.scrollY ; 
+              stars.style.left = value*  0.25  + 'px';
+              moom.style.top = value * 1.05  + 'px';
+              mountains_behind.style.top = value * 0.5  + 'px';
+              mountains_front.style.top = value * 0  + 'px';
+              text.style.marginRight = value * 4  + 'px';
+              text.style.marginTop = value * 1.5  + 'px';
+              btn.style.marginTop = value * 1.5  + 'px';
+              header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>
