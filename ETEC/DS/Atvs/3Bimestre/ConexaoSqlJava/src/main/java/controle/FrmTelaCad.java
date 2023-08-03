@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class FrmTelaCad extends JFrame {
     Conexao con_cliente;
     JLabel rCodigo, rNome, rEmail, rTel, rData;
-    JTextField tCodigo, tNome, tEmail;
+    JTextField tCodigo, tNome, tEmail, tTel, tData;
     JFormattedTextField mTel, mData;
     JButton primeiro, anterior, proximo, ultimo;
     
@@ -30,8 +30,22 @@ public class FrmTelaCad extends JFrame {
     JScrollPane scp_tabela;
     
     public FrmTelaCad() throws SQLException{
-        
+         
         Container tela = getContentPane();
+        
+        rCodigo = new JLabel("Codigo");
+        rNome = new JLabel("Nome");
+        rEmail = new JLabel("Email");
+        rTel = new JLabel("Telefone");
+        rData = new JLabel("Data");
+        tCodigo = new JTextField();
+        tNome = new JTextField();
+        tEmail= new JTextField();
+        tTel = new JTextField();
+        tData= new JTextField();
+
+
+
         
         con_cliente = new Conexao();
         con_cliente.conecta();
@@ -44,6 +58,7 @@ public class FrmTelaCad extends JFrame {
         proximo = new JButton ("Próximo");
         ultimo = new JButton ("Último");
         
+        
         primeiro.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
@@ -54,18 +69,19 @@ public class FrmTelaCad extends JFrame {
                 }
             }
         });
+                
         
         tblClientes = new javax.swing.JTable();
         scp_tabela = new javax.swing.JScrollPane();
         
-        tblClientes = new javax.swing.JTable();
-        scp_tabela = new javax.swing.JScrollPane();
+        tblClientes.setBounds(50,300,550,200);
+        scp_tabela.setBounds(50,300,550,200);
         
-        tblClientes.setBounds(50,200,550,200);
-        scp_tabela.setBounds(50,200,550,200);
+
         
         tela.add(tblClientes);
         tela.add(scp_tabela);
+        
         
         tblClientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
         
@@ -90,7 +106,30 @@ public class FrmTelaCad extends JFrame {
         scp_tabela.setViewportView(tblClientes);
         
         tblClientes.setAutoCreateRowSorter(true);
+
+        rCodigo.setBounds(10, 10, 50, 50);
+        rNome.setBounds(10, 40, 50, 50);
+        rEmail.setBounds(10, 70, 50, 50);
+        rTel.setBounds(10, 100, 50, 50);
+        rData.setBounds(10, 130, 50, 50);
         
+        tCodigo.setBounds(70, 25, 100, 20);
+        tNome.setBounds(70, 55, 100, 20);
+        tEmail.setBounds(70, 85, 100, 20);
+        tTel.setBounds(70, 115, 100, 20);
+        tData.setBounds(70, 145, 100, 20);
+        
+        
+        tela.add(tEmail);
+        tela.add(tCodigo);
+        tela.add(tNome);
+        tela.add(tTel);
+        tela.add(tData);
+        tela.add(rCodigo);
+        tela.add(rNome);
+        tela.add(rEmail);
+        tela.add(rTel);
+        tela.add(rData);
         setSize(800,600);
         setVisible(true);
         setLocationRelativeTo(null);
@@ -123,8 +162,9 @@ public class FrmTelaCad extends JFrame {
 }
     }
     
-public static void main(String args[]){
-        
+public static void main(String args[]) throws SQLException{
+ FrmTelaCad app = new FrmTelaCad();
+ app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+}
 }
 
-}
