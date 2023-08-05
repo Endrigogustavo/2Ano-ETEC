@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrmTelaCad extends JFrame {
     Conexao con_cliente;
-    JLabel rCodigo, rNome, rEmail, rTel, rData, rPesquisar;
+    JLabel rCodigo, rNome, rEmail, rTel, rData, rPesquisar, imagem;
     JTextField tCodigo, tNome, tEmail, tTel, tData,tPesquisar;
     JFormattedTextField mTel, mData, mCodigo;
     JButton primeiro, anterior, proximo, ultimo, registro, gravar, alterar, excluir,pesquisar;
@@ -30,9 +30,13 @@ public class FrmTelaCad extends JFrame {
     JScrollPane scp_tabela;
     
     public FrmTelaCad() throws SQLException{
-         
+
         Container tela = getContentPane();
         
+        ImageIcon icone = new ImageIcon("baixados.jpeg");
+        imagem = new JLabel(icone);
+        imagem.setBounds(0, 0, 1200, 620);
+
         rCodigo = new JLabel("Codigo");
         rNome = new JLabel("Nome");
         rEmail = new JLabel("Email");
@@ -211,44 +215,44 @@ public class FrmTelaCad extends JFrame {
         });
                 
                 
-                primeiro.setBounds(60, 220,90, 20);
+                primeiro.setBounds(60, 260,100, 30);
                 tela.add(primeiro);
-                anterior.setBounds(150, 220,90, 20);
+                anterior.setBounds(150, 260,100, 30);
                 tela.add(anterior);
-                proximo.setBounds(240, 220,90, 20);
+                proximo.setBounds(240, 260,100, 30);
                 tela.add(proximo);
-                ultimo.setBounds(330, 220,90, 20);
+                ultimo.setBounds(330, 260,100, 30);
                 tela.add(ultimo);
                 
                 
-                registro.setBounds(490, 220,120, 20);
+                registro.setBounds(500, 260,130, 30);
                 tela.add(registro);
-                gravar.setBounds(625, 220,90, 20);
+                gravar.setBounds(635, 260,100, 30);
                 tela.add(gravar);
-                alterar.setBounds(730, 220,90, 20);
+                alterar.setBounds(730, 260,100, 30);
                 tela.add(alterar);
-                excluir.setBounds(830, 220,90, 20);
+                excluir.setBounds(830, 260,100, 30);
                 tela.add(excluir);
                 
-                pesquisar.setBounds(350, 265,90, 19);
+                pesquisar.setBounds(450, 335,150, 22);
                 tela.add(pesquisar);
          
-        rPesquisar.setBounds(10, 250, 150, 50);
-        tPesquisar.setBounds(120, 265, 250, 20);
+        rPesquisar.setBounds(50, 320, 200, 50);
+        tPesquisar.setBounds(190, 335, 250, 20);
         
 
                 
         
         tblClientes = new javax.swing.JTable();
         scp_tabela = new javax.swing.JScrollPane();
-        
-        tblClientes.setBounds(0,300,1000,200);
-        scp_tabela.setBounds(0,300,1000,200);
+
+        tblClientes.setBounds(50,400,900,350);
+        scp_tabela.setBounds(50,400,900,350);
         
 
         
         tela.add(tblClientes);
-        tela.add(scp_tabela);
+
         
         
         tblClientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
@@ -292,17 +296,33 @@ public class FrmTelaCad extends JFrame {
         mCodigo = new JFormattedTextField(tCodigo);
         
         
-        rCodigo.setBounds(10, 10, 50, 50);
-        rNome.setBounds(10, 40, 50, 50);
-        rEmail.setBounds(10, 70, 50, 50);
-        rTel.setBounds(10, 100, 50, 50);
-        rData.setBounds(10, 130, 50, 50);
+        rCodigo.setBounds(50, 40, 150, 50);
+        rNome.setBounds(50, 80, 150, 50);
+        rEmail.setBounds(50, 120, 150, 50);
+        rTel.setBounds(50, 160, 150, 50);
+        rData.setBounds(50, 200, 150, 50);
         
-        tCodigo.setBounds(70, 25, 40, 20);
-        tNome.setBounds(70, 55, 200, 20);
-        tEmail.setBounds(70, 85, 200, 20);
-        tTel.setBounds(70, 115, 100, 20);
-        tData.setBounds(70, 145, 70, 20);
+        rCodigo.setForeground(Color.white);
+        rNome.setForeground(Color.white);
+        rEmail.setForeground(Color.white);
+        rTel.setForeground(Color.white);
+        rData.setForeground(Color.white);
+        rPesquisar.setForeground(Color.white);
+        
+        rCodigo.setFont(new Font("Tahoma",Font.BOLD,15));
+        rNome.setFont(new Font("Tahoma",Font.BOLD,15));
+        rEmail.setFont(new Font("Tahoma",Font.BOLD,15));
+        rTel.setFont(new Font("Tahoma",Font.BOLD,15));
+        rData.setFont(new Font("Tahoma",Font.BOLD,15));
+        rPesquisar.setFont(new Font("Tahoma",Font.BOLD,15));
+        
+        
+        tCodigo.setBounds(130, 55, 80, 20);
+        tNome.setBounds(130, 95, 220, 20);
+        tEmail.setBounds(130, 135, 220, 20);
+        tTel.setBounds(130, 175, 120, 20);
+        tData.setBounds(130, 215, 80, 20);
+        
 
         
         tela.add(tEmail);
@@ -320,9 +340,13 @@ public class FrmTelaCad extends JFrame {
         tela.add(tPesquisar);
         
 
-        setSize(1000,600);
+        tela.add(imagem);
+        
+                tela.add(scp_tabela);
+        setSize(1000,620);
         setVisible(true);
         setLocationRelativeTo(null);
+
         
         con_cliente.execultarSQL("select * from tbclientes order by cod");
         preencherTabela();
@@ -363,8 +387,11 @@ public class FrmTelaCad extends JFrame {
     }
     
 public static void main(String args[]) throws SQLException{
+    
  FrmTelaCad app = new FrmTelaCad();
  app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 }
+
+
 }
 
