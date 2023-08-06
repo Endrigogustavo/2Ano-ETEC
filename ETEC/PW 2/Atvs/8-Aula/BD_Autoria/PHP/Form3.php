@@ -6,11 +6,11 @@
     <form action="" method="post" name="cliente">
         <fieldset id="a">
             <legend> Cadastras</legend>
-            <p>Nome: <input type="text" name="txtnome"></p>
-            <p>Estoque: <input type="text" name="txtestoq"></p>
-            <p>Estoque: <input type="text" name="txtestoq1"></p>
-            <p>Estoque: <input type="text" name="txtestoq2"></p>
-            <p>Estoque: <input type="text" name="txtestoq3"></p>
+            <p>Titulo: <input type="text" name="txtnome"></p>
+            <p>Categoria: <input type="text" name="txtestoq"></p>
+            <p>ISBN: <input type="text" name="txtestoq1"></p>
+            <p>Idioma: <input type="text" name="txtestoq2"></p>
+            <p>Paginas: <input type="text" name="txtestoq3"></p>
 
         </fieldset>
         <br>

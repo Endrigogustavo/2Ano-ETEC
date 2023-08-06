@@ -7,9 +7,9 @@
         <fieldset id="a">
             <legend> Cadastras</legend>
             <p>Nome: <input type="text" name="txtnome"></p>
-            <p>Estoque: <input type="text" name="txtestoq"></p>
-            <p>Estoque: <input type="text" name="txtestoq1"></p>
-            <p>Estoque: <input type="text" name="txtestoq2"></p>
+            <p>Sobrenome: <input type="text" name="txtestoq"></p>
+            <p>Email: <input type="text" name="txtestoq1"></p>
+            <p>Nasc: <input type="text" name="txtestoq2"></p>
         </fieldset>
         <br>
         <fieldset class="b">

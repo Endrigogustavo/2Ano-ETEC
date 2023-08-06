@@ -37,22 +37,24 @@ class Produto{
     }
     
     
-    // parte 3 - métodos
 
-    function salvar(){
+    function salvar()
+    {
         try{
             $this->conn = new Conectar();
             $sql = $this->conn->prepare("insert into autoria values (?,?,?,?)");
             @$sql->bindParam(1, $this->getcod_autor(), PDO::PARAM_STR);
             @$sql->bindParam(2, $this->getcod_livro(), PDO::PARAM_STR);
-            @$sql->bindParam(3, $this->getdatalancamento(), PDO::PARAM_STR);
-            @$sql->bindParam(3, $this->geteditoria(), PDO::PARAM_STR);
+            @$sql->bindParam(3, $this->getDataLancamento(), PDO::PARAM_STR);
+            @$sql->bindParam(4, $this->geteditoria(), PDO::PARAM_STR);
             if($sql->execute() == 1){
                 return "Registro salvo com sucesso!";
             }
             $this->conn = null;
-        }catch(PDOException $exc){
-            echo "Erro ao salvar o Registro. " . $exc->getMessage();
+        }
+        catch(PDOException $exc)
+        {
+       echo "Erro ao salvar o Registro. " . $exc->getMessage();
         }
     }
     function listar(){

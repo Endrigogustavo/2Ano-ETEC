@@ -116,6 +116,17 @@ public class FrmTelaCad extends JFrame {
             }
         });
         
+        
+        registro.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                tCodigo.setText("");
+                tData.setText("");
+                tEmail.setText("");
+                tNome.setText("");
+                tTel.setText("");
+            }
+        });
+        
         gravar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 String nome = tNome.getText();
