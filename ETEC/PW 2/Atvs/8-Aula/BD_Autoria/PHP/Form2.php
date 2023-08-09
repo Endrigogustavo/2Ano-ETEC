@@ -1,22 +1,47 @@
 <html>
-    <body>
-     <form name="cliente"  method = "POST" action = "">
-        <fieldset id="a">
-           <legend><b> Dados do Autoria: </b></legend>
-               <p> Código do Autor: <input name="txtcoda" type="text" size="1" placeholder="0"> 
-               <p> Código do Livro: <input name="txtcodl" type="text" size="1" placeholder="0"> 
-               <p> Nome da Editora: <input name="txtedit" type="text" size="40" maxlegth="40" placeholder="Nome">
-               <p> Data de Lançamento: <input name="txtdatal" type="text" size="10" placeholder="0"> </p>
-        </fieldset>
-         <br>
-      <fieldset id="b">
-         <legend ><b> Opções: </b></legend>
-         <br>
-         <input name="btnenviar" type="submit" value="Cadastrar" > &nbsp;&nbsp;
-         <input name="limpar" type="reset" value="Limpar" >
-      </fieldset>
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="../css.css">
+</head>
+<body>
 
-     </form>
+<main>
+        <h1>Create Account</h1>
+        <div class="alternative">
+        </div>
+
+        <form action="" method="post" name="cliente">
+            <label for="name">
+                <span>Código do Autor:</span>
+                <input type="text" id="name" name="txtcoda">
+            </label>
+
+            <label for="email">
+                <span>Código do Livro:</span>
+                <input type="text" id="email" name="txtcodl">
+            </label>
+
+            <label for="email">
+                <span>Nome da Editora:</span>
+                <input type="text" id="email" name="txtedit">
+            </label>
+
+            <label for="password">
+                <span>Data de Lançamento:</span>
+                <input type="text" id="password" name="txtdatal">
+            </label>
+
+            <input type="submit"  value="Cadastar" name="btnenviar" id="button">
+        </form>
+    </main>
+    <section class="images">
+        <img src="../Sunset-cuate (1).svg" alt="Mobile">
+        <div class="circle"></div>
+    </section>
+          
 
      <?php
      extract($_POST, EXTR_OVERWRITE);
