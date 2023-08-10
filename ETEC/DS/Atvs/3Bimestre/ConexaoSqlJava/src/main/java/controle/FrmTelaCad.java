@@ -30,7 +30,9 @@ public class FrmTelaCad extends JFrame {
     JTable tblClientes;
     JScrollPane scp_tabela;
     
-    public FrmTelaCad() throws SQLException{
+     MaskFormatter n1,n2;
+    
+    public FrmTelaCad() throws SQLException, ParseException{
 
         Container tela = getContentPane();
         
@@ -241,7 +243,7 @@ public class FrmTelaCad extends JFrame {
             }
         });
                 
-                
+     
                 primeiro.setBounds(60, 260,100, 30);
                 tela.add(primeiro);
                 anterior.setBounds(150, 260,100, 30);
@@ -351,10 +353,20 @@ public class FrmTelaCad extends JFrame {
         tCodigo.setBounds(130, 55, 80, 20);
         tNome.setBounds(130, 95, 220, 20);
         tEmail.setBounds(130, 135, 220, 20);
-        tTel.setBounds(130, 175, 120, 20);
-        tData.setBounds(130, 215, 80, 20);
         
-
+        
+        
+                try {
+           n1 = new MaskFormatter("(##)#####-####");
+           n2 = new MaskFormatter("##/##/####");
+           tData = new JFormattedTextField(n2); 
+           tData.setBounds(130, 215, 80, 20);
+           tTel = new JFormattedTextField(n1);
+           tTel.setBounds(130, 175, 120, 20);
+        } catch (ParseException e) {
+        }
+                
+                
         
         tela.add(tEmail);
         tela.add(tCodigo);
@@ -432,7 +444,7 @@ public class FrmTelaCad extends JFrame {
 }
     }
     
-public static void main(String args[]) throws SQLException{
+public static void main(String args[]) throws SQLException, ParseException{
     
  FrmTelaCad app = new FrmTelaCad();
  app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
