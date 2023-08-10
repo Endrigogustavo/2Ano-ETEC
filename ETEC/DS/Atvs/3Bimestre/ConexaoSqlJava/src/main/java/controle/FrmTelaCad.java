@@ -8,6 +8,7 @@ import conexao.Conexao;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.*;
 import javax.swing.*;
@@ -24,7 +25,7 @@ public class FrmTelaCad extends JFrame {
     JLabel rCodigo, rNome, rEmail, rTel, rData, rPesquisar, imagem;
     JTextField tCodigo, tNome, tEmail, tTel, tData,tPesquisar;
     JFormattedTextField mTel, mData, mCodigo;
-    JButton primeiro, anterior, proximo, ultimo, registro, gravar, alterar, excluir,pesquisar;
+    JButton primeiro, anterior, proximo, ultimo, registro, gravar, alterar, excluir,pesquisar,sair;
     
     JTable tblClientes;
     JScrollPane scp_tabela;
@@ -70,8 +71,14 @@ public class FrmTelaCad extends JFrame {
         alterar = new JButton ("Alterar");
         excluir = new JButton ("Excluir");
         pesquisar = new JButton ("Pesquisar");
+        sair = new JButton ("Sair");
         
-        
+         sair.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                System.exit(0);
+            }
+        });
+         
         primeiro.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
@@ -86,19 +93,29 @@ public class FrmTelaCad extends JFrame {
         anterior.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
+                    if(con_cliente.resultset.isFirst()){
+                    JOptionPane.showMessageDialog(null, "Ja esta no primeiro registro");
+                    }else{
                     con_cliente.resultset.previous();
                     mostrar_Dados();
+                    }
                 }catch(SQLException erro){
                     JOptionPane.showMessageDialog(null,"Não foi possivel acessar o primeiro registro"+erro,"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });
         
+        
+        
         proximo.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
+                     if(con_cliente.resultset.isLast()){
+                    JOptionPane.showMessageDialog(null, "Ja esta no ultimo registro");
+                    }else{
                     con_cliente.resultset.next();
                     mostrar_Dados();
+                    }
                 }catch(SQLException erro){
                     JOptionPane.showMessageDialog(null,"Não foi possivel acessar o primeiro registro"+erro,"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -146,8 +163,7 @@ public class FrmTelaCad extends JFrame {
             }
         });
         
-        alterar.addActionListener(new ActionListener(){
-            
+        alterar.addActionListener(new ActionListener(){           
             //Arrumar
             public void actionPerformed(ActionEvent e){
                 String nome = tNome.getText();
@@ -247,6 +263,9 @@ public class FrmTelaCad extends JFrame {
                 
                 pesquisar.setBounds(450, 335,150, 22);
                 tela.add(pesquisar);
+                
+                sair.setBounds(750, 560,150, 30);
+                tela.add(sair);
          
         rPesquisar.setBounds(50, 320, 200, 50);
         tPesquisar.setBounds(190, 335, 250, 20);
@@ -354,7 +373,7 @@ public class FrmTelaCad extends JFrame {
         tela.add(imagem);
         
                 tela.add(scp_tabela);
-        setSize(1000,620);
+        setSize(1000,650);
         setVisible(true);
         setLocationRelativeTo(null);
 
