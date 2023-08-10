@@ -264,7 +264,7 @@ public class FrmTelaCad extends JFrame {
                 pesquisar.setBounds(450, 335,150, 22);
                 tela.add(pesquisar);
                 
-                sair.setBounds(750, 200,150, 30);
+                sair.setBounds(750, 335,150, 30);
                 tela.add(sair);
                 
                
@@ -374,7 +374,7 @@ public class FrmTelaCad extends JFrame {
         tela.add(imagem);
         
 
-         tela.setComponentZOrder(primeiro, 0);
+                tela.setComponentZOrder(primeiro, 0);
                 tela.setComponentZOrder(anterior, 0);
                 tela.setComponentZOrder(proximo, 0);
                 tela.setComponentZOrder(ultimo, 0);
@@ -388,7 +388,7 @@ public class FrmTelaCad extends JFrame {
          
 
         
-                tela.add(scp_tabela);
+        tela.add(scp_tabela);
         setSize(1000,650);
         setVisible(true);
         setLocationRelativeTo(null);
