@@ -25,7 +25,6 @@ public class Conexao {
         try {
             Class.forName(driver);
             conexao = DriverManager.getConnection(url,usuario,senha);
-            JOptionPane.showMessageDialog(null, "Conexao estabelecida");
         } catch (ClassNotFoundException Driver) {
             JOptionPane.showMessageDialog(null, "Driver nao localizado"+Driver);
             result = false;

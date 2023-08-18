@@ -4,7 +4,8 @@
  */
 package controle;
 
-
+import conexao.Conexao;
+import java.sql.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,43 +19,61 @@ import javax.swing.*;
  * @author Admin
  */
 public class FrmTelaCad extends JFrame {
+    Conexao con_cliente;
 
-
-    JTextField tCodigo;
-    JButton primeiro;
+    JTextField Nome;
+    JButton Logar;
     JPasswordField Senha;
     
     public FrmTelaCad() {
         Container tela = getContentPane();
    
+        con_cliente = new Conexao();
+        con_cliente.conecta();
+        
         setTitle("Conexao Java com Mysql");
         setResizable(false);
         tela.setLayout(null);
         
         
-        tCodigo = new JTextField();
+        Nome = new JTextField();
         Senha = new JPasswordField();
-        primeiro = new JButton();
+        Logar = new JButton();
         
-         tCodigo.setBounds(130, 55, 80, 20);
+         Nome.setBounds(130, 55, 80, 20);
          Senha.setBounds(130, 75, 80, 20);
-         primeiro.setBounds(130, 95, 80, 20);
+         Logar.setBounds(130, 95, 80, 20);
         
-           primeiro.addActionListener(new ActionListener(){
+           Logar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try {
-                    AtvForm mostrar = new AtvForm();
+                    String pesquisa = "select * from tblusuario where usuario like '" +Nome.getText() + "' && senha = " +Senha.getText() + "";
+                    con_cliente.execultarSQL(pesquisa);
+                    
+ 
+                    if(con_cliente.resultset.first()){
+                    FrmTelaCadastro mostrar = new FrmTelaCadastro();
                     mostrar.setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(FrmTelaCad.class.getName()).log(Level.SEVERE, null, ex);
+                        dispose();
+                    }else{                                
+                     JOptionPane.showMessageDialog(null,"Usuario nao existe");
+                      
+                        con_cliente.desconectar();
+                        System.exit(0);
+                    }
+                    
+                    
+                    
+                } catch (SQLException erro) {
+                    JOptionPane.showMessageDialog(null, "Dados nao encontrados"+erro);
                 } catch (ParseException ex) {
                     Logger.getLogger(FrmTelaCad.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
-         tela.add(tCodigo);
+         tela.add(Nome);
          tela.add(Senha);
-         tela.add(primeiro);
+         tela.add(Logar);
 
         setSize(1000,650);
         setVisible(true);

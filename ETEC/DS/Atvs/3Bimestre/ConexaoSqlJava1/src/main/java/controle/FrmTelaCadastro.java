@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Admin
  */
-public class AtvForm extends JFrame {
+public class FrmTelaCadastro extends JFrame {
     Conexao con_cliente;
     JLabel rCodigo, rNome, rEmail, rTel, rData, rPesquisar, imagem;
     JTextField tCodigo, tNome, tEmail, tTel, tData,tPesquisar;
@@ -32,7 +32,7 @@ public class AtvForm extends JFrame {
     
      MaskFormatter n1,n2;
     
-    public AtvForm() throws SQLException, ParseException{
+    public FrmTelaCadastro() throws SQLException, ParseException{
 
         Container tela = getContentPane();
         
