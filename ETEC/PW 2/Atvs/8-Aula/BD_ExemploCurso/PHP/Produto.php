@@ -57,5 +57,37 @@ class Produto{
     }
 
     
+    function exclusao(){
+        try{
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("delete from produto where id = ?");
+            @$sql-> bindParam(1, $this->getId(), PDO::PARAM_STR);
+            if($sql->execute() == 1){
+                return "Excluido com sucesso!";
+            }
+            else{
+                return "Erro ao excluir";
+            }
+            $this->conn = null;
+        }catch(PDOException $exc){
+            echo "Erro ao excluir o Registro. " . $exc->getMessage();
+        }
+    }
+    
+
+    function consultar(){
+        try{
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("Select * from produto where nome like ?");
+            @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        }catch(PDOException $exc){
+            echo "Erro ao consultar. " . $exc->getMessage();
+        }
+    }
+
+
 }
 ?>
