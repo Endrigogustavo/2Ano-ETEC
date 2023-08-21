@@ -89,8 +89,8 @@ class Produto{
     function consultar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("Select * from produto where nome like ?");
-            @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+            $sql = $this->conn->prepare("Select * from autoria where 	cod_livro like ?");
+            @$sql-> bindParam(1, $this->getcod_autor(), PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;
