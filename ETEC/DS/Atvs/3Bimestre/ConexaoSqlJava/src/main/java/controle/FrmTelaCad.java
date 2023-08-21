@@ -43,6 +43,7 @@ public class FrmTelaCad extends JFrame {
         rCodigo = new JLabel("Codigo");
         rNome = new JLabel("Nome");
         rEmail = new JLabel("Email");
+        
         rTel = new JLabel("Telefone");
         rData = new JLabel("Data");
         rPesquisar = new JLabel("Pesquisar cliente");

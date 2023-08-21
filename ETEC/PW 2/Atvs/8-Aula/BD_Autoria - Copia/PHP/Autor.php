@@ -70,7 +70,7 @@ class Produto{
     function exclusao(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("delete from produto where id = ?");
+            $sql = $this->conn->prepare("delete from autor where id = ?");
             @$sql-> bindParam(1, $this->getId(), PDO::PARAM_STR);
             if($sql->execute() == 1){
                 return "Excluido com sucesso!";

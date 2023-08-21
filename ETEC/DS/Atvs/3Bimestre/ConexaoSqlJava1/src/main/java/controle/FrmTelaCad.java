@@ -21,6 +21,7 @@ import javax.swing.*;
 public class FrmTelaCad extends JFrame {
     Conexao con_cliente;
 
+    JLabel Login, Senha1;
     JTextField Nome;
     JButton Logar;
     JPasswordField Senha;
@@ -35,14 +36,17 @@ public class FrmTelaCad extends JFrame {
         setResizable(false);
         tela.setLayout(null);
         
-        
+        Login = new JLabel("Login");
+        Senha1 = new JLabel("Senha");
         Nome = new JTextField();
         Senha = new JPasswordField();
-        Logar = new JButton();
+        Logar = new JButton("Logar");
         
-         Nome.setBounds(130, 55, 80, 20);
-         Senha.setBounds(130, 75, 80, 20);
-         Logar.setBounds(130, 95, 80, 20);
+         Login.setBounds(130, 80, 150, 30);
+         Senha1.setBounds(130, 180, 150, 30);
+         Nome.setBounds(130, 105, 220, 30);
+         Senha.setBounds(130, 205, 220, 30);
+         Logar.setBounds(165, 305, 150, 30);
         
            Logar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -54,6 +58,7 @@ public class FrmTelaCad extends JFrame {
                     if(con_cliente.resultset.first()){
                     FrmTelaCadastro mostrar = new FrmTelaCadastro();
                     mostrar.setVisible(true);
+
                         dispose();
                     }else{                                
                      JOptionPane.showMessageDialog(null,"Usuario nao existe");
@@ -74,8 +79,10 @@ public class FrmTelaCad extends JFrame {
          tela.add(Nome);
          tela.add(Senha);
          tela.add(Logar);
-
-        setSize(1000,650);
+         tela.add(Senha1);
+         tela.add(Login);
+         
+        setSize(500,450);
         setVisible(true);
         setLocationRelativeTo(null);
 

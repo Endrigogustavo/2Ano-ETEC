@@ -275,7 +275,6 @@ public class FrmTelaCadastro extends JFrame {
         
 
                 
-        
         tblClientes = new javax.swing.JTable();
         scp_tabela = new javax.swing.JScrollPane();
 
@@ -285,6 +284,7 @@ public class FrmTelaCadastro extends JFrame {
 
         
         tela.add(tblClientes);
+        tela.add(scp_tabela);
 
         
         
@@ -400,7 +400,7 @@ public class FrmTelaCadastro extends JFrame {
          
 
         
-        tela.add(scp_tabela);
+        
         setSize(1000,650);
         setVisible(true);
         setLocationRelativeTo(null);
@@ -443,8 +443,12 @@ public class FrmTelaCadastro extends JFrame {
     JOptionPane.showMessageDialog(null,"erro ao listar dados da tabela!! \n "+erro,"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
 }
     }
-
-
+    
+public static void main(String args[]) throws SQLException, ParseException{
+     FrmTelaCadastro app = new FrmTelaCadastro();
+ app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 
 }
 
+
+}

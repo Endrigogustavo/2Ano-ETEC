@@ -19,9 +19,9 @@
     extract($_POST, EXTR_OVERWRITE);
     if(isset($btnenviar))
     {
-        include_once 'Produto.php';
+        include_once 'Autor.php';
         $pro = new Produto();
-        $pro -> setId($id);
+        $pro -> setid_autor($id);
         $pro->exclusao();
     }
     ?>
