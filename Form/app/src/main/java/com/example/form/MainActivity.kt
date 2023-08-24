@@ -145,8 +145,8 @@ fun FormLayoutFilled() {
             }
         }
         item {
+            var imageUrl = remember { mutableStateOf<String?>(null) }
             Box(Modifier.fillMaxWidth()) {
-
 
             }
         }
@@ -156,7 +156,7 @@ fun FormLayoutFilled() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp),
-                label = { Text("Last name") },
+                label = { Text("First name") },
                 value = text,
                 onValueChange = { text = it },
                 singleLine = true,
@@ -167,7 +167,7 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
@@ -177,7 +177,7 @@ fun FormLayoutFilled() {
                     capitalization = KeyboardCapitalization.Words
                 ),
                 keyboardActions = KeyboardActions {
-
+                    focusManager.moveFocus(FocusDirection.Next)
                 }
             )
 
@@ -199,7 +199,7 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
@@ -209,7 +209,7 @@ fun FormLayoutFilled() {
                     capitalization = KeyboardCapitalization.Words
                 ),
                 keyboardActions = KeyboardActions {
-
+                    focusManager.moveFocus(FocusDirection.Next)
                 }
             )
         }
@@ -230,7 +230,7 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
@@ -239,7 +239,7 @@ fun FormLayoutFilled() {
                     imeAction = ImeAction.Next
                 ),
                 keyboardActions = KeyboardActions {
-
+                    focusManager.moveFocus(FocusDirection.Next)
                 },
                 singleLine = true,
             )
@@ -261,7 +261,7 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
@@ -294,7 +294,7 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
@@ -314,7 +314,7 @@ fun FormLayoutFilled() {
                     imeAction = ImeAction.Next
                 ),
                 keyboardActions = KeyboardActions {
-
+                    focusManager.moveFocus(FocusDirection.Next)
                 },
                 singleLine = true,
                 trailingIcon = {
@@ -324,7 +324,7 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
@@ -344,7 +344,7 @@ fun FormLayoutFilled() {
                     imeAction = ImeAction.Next
                 ),
                 keyboardActions = KeyboardActions {
-
+                    focusManager.moveFocus(FocusDirection.Next)
                 },
                 singleLine = true,
                 trailingIcon = {
@@ -354,7 +354,7 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
@@ -384,11 +384,92 @@ fun FormLayoutFilled() {
                         exit = fadeOut()
                     ) {
                         IconButton(onClick = { text = "" }) {
-
+                            Icon(Icons.Outlined.Cancel, "Clear")
                         }
                     }
                 },
             )
+        }
+        item {
+            Text(
+                text = "Groups",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(
+                    start = 16.dp,
+                    end = 16.dp,
+                    top = 24.dp,
+                    bottom = 8.dp
+                )
+            )
+        }
+        item {
+            var selected by remember { mutableStateOf<Int?>(null) }
+            val options = listOf("Family", "Friends", "Work", "Other")
+            Column {
+                options.forEachIndexed { i, option ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(24.dp),
+                        modifier = Modifier
+                            .clickable { selected = i }
+                            .fillMaxWidth()
+                            .padding(16.dp)
+                    ) {
+                        RadioButton(
+                            selected = selected == i,
+                            onClick = null
+                        )
+                        Text(text = option)
+                    }
+
+                }
+            }
+        }
+        item {
+            Text(
+                text = "Notification Options",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(
+                    start = 16.dp,
+                    end = 16.dp,
+                    top = 24.dp,
+                    bottom = 8.dp
+                )
+            )
+        }
+        item {
+            var selected by remember { mutableStateOf(false) }
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(24.dp),
+                modifier = Modifier
+                    .clickable { selected = selected.not() }
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Checkbox(
+                    checked = selected,
+                    onCheckedChange = null
+                )
+                Text(text = "Override 'Do not Disturb'")
+            }
+        }
+        item {
+            var selected by remember { mutableStateOf(false) }
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(24.dp),
+                modifier = Modifier
+                    .clickable { selected = selected.not() }
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Checkbox(
+                    checked = selected,
+                    onCheckedChange = null
+                )
+                Text(text = "Block calls from this contact")
+            }
         }
     }
 }
@@ -402,7 +483,7 @@ fun ButtonSample() {
 fun ButtonWithIconSample() {
     Button(
         onClick = { /* Do something! */ },
-        contentPadding = ButtonDefaults.ButtonWithIconContentPadding
+
     ) {
         Icon(
             Icons.Filled.Favorite,
