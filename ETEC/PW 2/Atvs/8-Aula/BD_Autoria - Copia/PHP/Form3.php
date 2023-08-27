@@ -1,40 +1,63 @@
 <html>
-<head>
-    <title>Document</title>
-</head>
-<body>
-    <form action="" method="post" name="cliente">
-        <fieldset id="a">
-            <legend> Cadastras</legend>
-            <p>Titulo: <input type="text" name="txtnome"></p>
-            <p>Categoria: <input type="text" name="txtestoq"></p>
-            <p>ISBN: <input type="text" name="txtestoq1"></p>
-            <p>Idioma: <input type="text" name="txtestoq2"></p>
-            <p>Paginas: <input type="text" name="txtestoq3"></p>
 
-        </fieldset>
-        <br>
-        <fieldset class="b">
-            <legend> Opcoes </legend>
-            <br>
-            <input type="submit" value="Cadastar" name="btnenviar">
-            <input type="reset" value="Limpar" name="limpar">
-        </fieldset>
-    </form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="../css.css">
+</head>
+
+<body>
+    <main>
+
+        <h1>Create Account</h1>
+        <div class="alternative">
+        </div>
+
+        <form action="" method="post" name="cliente">
+            <label for="name">
+                <span>Titulo</span>
+                <input type="text" id="name" name="txtnome">
+            </label>
+
+                <label for="name">
+                    <span>Categoria</span>
+                    <input type="text"id="email"  name="txtestoq">
+                </label>
+                <label for="name">
+                    <span>ISBN</span>
+                    <input type="text"id="email"  name="txtestoq1">
+                </label>
+                <label for="name">
+                    <span>Idioma</span>
+                    <input type="text" id="email" name="txtestoq2">
+                </label>
+                <label for="name">
+                    <span>Q_Paginas</span>
+                    <input type="text" id="email" name="txtestoq3">
+                </label>
+                <input type="submit" value="Cadastar" name="btnenviar" id="button">
+        </form>
+    </main>
+    <section class="images">
+        <img src="../Sunset-cuate (1).svg" alt="Mobile">
+        <div class="circle"></div>
+    </section>
 
     <?php
     extract($_POST, EXTR_OVERWRITE);
-    if(isset($btnenviar))
-    {
+    if (isset($btnenviar)) {
         include_once 'Livro.php';
         $pro = new Produto();
-        $pro -> setTitulo($txtnome);
-        $pro -> setCategoria($txtestoq);
-        $pro -> setISBN($txtestoq1);
-        $pro -> setIdioma($txtestoq2);
-        $pro -> setQtdePag($txtestoq3);
-        $pro->salvar();
+        $pro->setTitulo($txtnome);
+        $pro->setCategoria($txtestoq);
+        $pro->setISBN($txtestoq1);
+        $pro->setIdioma($txtestoq2);
+        $pro->setQtdePag($txtestoq3);
+        echo "<h3><br><br>" . $pro->salvar() . "</h3>";
     }
     ?>
 </body>
+
 </html>

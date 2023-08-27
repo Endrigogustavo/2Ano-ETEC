@@ -58,6 +58,5 @@
       ?>
       <br>
 
-      <button><a href = "../menu.html"> Voltar </a></button>
    </body>
 </html>

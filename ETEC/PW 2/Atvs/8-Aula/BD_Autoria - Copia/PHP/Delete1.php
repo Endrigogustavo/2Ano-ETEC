@@ -1,29 +1,43 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="../css.css">
 </head>
+
 <body>
-    <form action="" method="post" name="cliente">
-        <fieldset id="a">
-            <legend> Informe o id que deseja deletar</legend>
-            <p>id: <input type="text" name="id"></p>
-            
-        </fieldset>
-        <br>
-        <fieldset class="b">
-            <legend> Opcoes </legend>
-            <br>
-            <input type="submit" value="Deletar" name="btnenviar">
-            <input type="reset" value="Limpar" name="limpar">
-        </fieldset>
-    </form>
+
+    <main>
+
+        <h1> Informe o id que deseja deletar</h1>
+        <div class="alternative">
+        </div>
+
+        <form action="" method="post" name="cliente">
+            <label for="name">
+                <span>Id</span>
+                <input type="text" name="id">
+            </label>
+            <input type="submit" value="Deletar" name="btnenviar" id="button">
+        </form>
+    </main>
+    <section class="images">
+        <img src="../Sunset-cuate (1).svg" alt="Mobile">
+        <div class="circle"></div>
+    </section>
 
     <?php
     extract($_POST, EXTR_OVERWRITE);
-    if(isset($btnenviar))
-    {
+    if (isset($btnenviar)) {
         include_once 'Autor.php';
         $pro = new Produto();
-        $pro -> setid_autor($id);
+        $pro->setid_autor($id);
         $pro->exclusao();
     }
     ?>
 </body>
+
 </html>

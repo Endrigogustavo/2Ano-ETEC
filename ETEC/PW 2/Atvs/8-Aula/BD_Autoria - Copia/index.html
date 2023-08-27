@@ -5,114 +5,192 @@
   <head>
     <meta charset="UTF-8">
     <title> Drop Down Sidebar Menu | CodingLab </title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style1.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="" type="text/css" />
+
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 
+   <body>
+        <img src="wp6430221-anime-guitar-girl-4k-pc-wallpapers.jpg" class="rellax img1" data-rellax-speed="5" >
+        <nav id="menu">
+            <div class="menu-item">
+                <div class="menu-text">
+                    <a href="#">Listar</a>
+                </div>
+                <div class="sub-menu">
+                    <div class="icon-box">
+                        <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Lista3.php">Livro</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Visualizar registros da tabela Livro</div>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="fal fa-lightbulb-on"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Listar2.php">Autoria</a><i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Visualizar registros da tabela Autoria</div>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="fal fa-bomb"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Listar.php">Autor</a><i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Visualizar registros da tabela Autor</div>
+                        </div>
+                    </div>
+                    <div class="sub-menu-holder"></div>
+                </div>
+            </div>
+            <div class="menu-item highlight">
+                <div class="menu-text">
+                    <a href="#">Gerenciar</a>
+                </div>
+                <div class="sub-menu double">
+                    <div class="icon-box gb a">
+                        <div class="icon"><i class="far fa-question-circle"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Form3.php">Cadastrar Livro</a><i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Gerenciamento de Cadastro</div>
+                        </div>
+                    </div>
+                    <div class="icon-box gb b">
+                        <div class="icon"><i class="far fa-users-class"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Delete3.php">Deletar Livro</a><i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Gerenciamento de Exclusao</div>
+                        </div>
+                    </div>
+                    <div class="icon-box gb c">
+                        <div class="icon"><i class="far fa-school"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Form2.php">Cadastrar Autoria</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Gerenciamento de Cadastro</div>
+                        </div>
+                    </div>
+                    <div class="icon-box gb d">
+                        <div class="icon"><i class="far fa-chess-rook"></i></div>
+                        <div class="text">
+                            <div class="title"> <a href="PHP/Delete2.php">Deletar Autoria</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Gerenciamento de Exclusao</div>
+                        </div>
+                    </div>
+                    <div class="icon-box gb e">
+                        <div class="icon"><i class="far fa-video-plus"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Form.php">Cadastrar Autor</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Gerenciamento de Cadastro</div>
+                        </div>
+                    </div>
+                    <div class="icon-box gb f">
+                        <div class="icon"><i class="far fa-cat"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Delete1.php">Deletar Autor</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Gerenciamento de Exclusao</div>
+                        </div>
+                    </div>
+                    <div class="bottom-container">
+                        Ready to dive in? <a href="#">Get Started</a>
+                    </div>
+                    <div class="sub-menu-holder"></div>
+                </div>
+            </div>
+            <div class="menu-item highlight">
+                <div class="menu-text">
+                    <a href="#">Support</a>
+                </div>
+                <div class="sub-menu triple">
+                    <div class="top-container gb c icon-box">
+                        <div class="icon big"><i class="far fa-book"></i></div>
+                        <div class="text">
+                            <div class="title">Where to start</div>
+                            <div class="sub-text">Find out where to begin below</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3>Your Journey</h3>
+                        <a href="#">Get Started</a>
+                        <a href="#">Learn the Basics</a>
+                        <a href="#">Get Advanced</a>
+                        <a href="#">Start Teaching</a>
+                    </div>
+                    <div class="box">
+                        <h3>Your Tools</h3>
+                        <a href="#">Turbo Editor</a>
+                        <a href="#">Time Stopper</a>
+                        <a href="#">Brain Enhancer</a>
+                        <a href="#">Network Maker</a>
+                    </div>
+                    <div class="icon-box flat">
+                        <div class="icon"><i class="fal fa-plug"></i></div>
+                        <div class="text">
+                            <div class="title">API Guide <i class="far fa-arrow-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="icon-box flat">
+                        <div class="icon"><i class="fal fa-comments"></i></div>
+                        <div class="text">
+                            <div class="title">Support Line <i class="far fa-arrow-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="icon-box flat">
+                        <div class="icon"><i class="fal fa-phone-volume"></i></div>
+                        <div class="text">
+                            <div class="title">Live Chat <i class="far fa-arrow-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="icon-box flat">
+                        <div class="icon"><i class="fal fa-book-spells"></i></div>
+                        <div class="text">
+                            <div class="title">Documentation <i class="far fa-arrow-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-text">
+                    <a href="#">Pesquisar</a>
+                </div>
+                <div class="sub-menu">
+                    <div class="icon-box">
+                        <div class="icon"><i class="far fa-satellite"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Pesquisar3.php">Livro</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Pesquisar na tabela Livro</div>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="fab fa-twitter-square"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Pesquisar2.php">Autoria</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Pesquisar na tabela Autoria</div>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="fab fa-twitch"></i></div>
+                        <div class="text">
+                            <div class="title"><a href="PHP/Pesquisar1.php">Autor</a> <i class="far fa-arrow-right"></i></div>
+                            <div class="sub-text">Pesquisar na tabela Autor</div>
+                        </div>
+                    </div>
+                    <div class="sub-menu-holder"></div>
+                </div>
+            </div>
+            <div id="sub-menu-container">
+                <div id="sub-menu-holder">
+                    <div id="sub-menu-bottom">
 
-<body>
-  <div class="sidebar close">
-    <!--www.codingnepalweb.com -->
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
-      <!--    <svg data-src="https://s2.svgbox.net/assets/logo-white.svg" 
-               width="50"
-               height="50" 
-               fill="purple">
-              </svg>
-            
-              <script type="text/javascript" src="https://unpkg.com/external-svg-loader@1.0.0/svg-loader.min.js" async></script>-->
-      <span class="logo_name">Menu</span>
-    </div>
-    <ul class="nav-links">
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="link_name">Listar</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Listar</a></li>
-          <!--alt click seleciona varios lugares para digitar ao memso tempo-->
-          <li><a href="PHP/Lista3.php">Livro</a></li>
-          <li><a href="PHP/Listar2.php">Autoria</a></li>
-          <li><a href="PHP/Listar.php">Autor</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Cadastro</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Cadastro</a></li>
-          <li><a href="PHP/Form.php">Autor</a></li>
-          <li><a href="PHP/Form2.php">Autoria</a></li>
-          <li><a href="PHP/Form3.php">Livro</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">Excluir</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Excluir</a></li>
-          <li><a href="PHP/Delete1.php">Autor</a></li>
-          <li><a href="PHP/Delete2.php">Autoria</a></li>
-          <li><a href="PHP/Delete3.php">Livro</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="link_name">Pesquisar</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Posts</a></li>
-          <li><a href="PHP/Pesquisar1.php">Autor</a></li>
-          <li><a href="PHP/Pesquisar2.php">Autoria</a></li>
-          <li><a href="PHP/Pesquisar3.php">Livro</a></li>
-        </ul>
-      
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-plug' ></i>
-            <span class="link_name">Alterar</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Plugins</a></li>
-          <li><a href="#">Disciplina</a></li>
-          <li><a href="#">Curso</a></li>
-          <li><a href="#">Aluno</a></li>
-        </ul>
-      </li>
-      
-</ul>
-  </div>
-  <section class="home-section">
-    <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span class="text">Loja de materiais</span>
-    </div>
-
-    <img src="2666935.jpg" class="rellax img1" data-rellax-speed="5" >
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+   
     <div class="textotop">
       <h1 class="multtext"></h1>
       <h2 class="texton">Empresa dedicada a aula de PW da Prof</h2>
