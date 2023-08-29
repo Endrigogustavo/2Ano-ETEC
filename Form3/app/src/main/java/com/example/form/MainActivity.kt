@@ -9,6 +9,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
@@ -20,11 +21,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material3.*
+import androidx.compose.material3.AlertDialogDefaults.containerColor
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.focus.FocusDirection
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
@@ -38,6 +42,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.form.ui.theme.FormTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,10 +64,11 @@ fun App(){
             Box(
                 modifier = with (Modifier){
                     fillMaxSize()
-                        .paint(
-                            // Replace with your image id
-                            painterResource(id = R.drawable.v0230828_130436_0000),
-                            contentScale = ContentScale.FillBounds)
+                        .background(
+                            brush = Brush.horizontalGradient(
+                                colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
+                            )
+                        )
 
                 })
             {
@@ -87,23 +93,33 @@ fun PreviewApp(){
 @Composable
 fun PinnedTopAppBar() {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val cor = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
     Scaffold(
 
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            SmallTopAppBar(
+        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)                    .background(
+            brush = Brush.horizontalGradient(
+                colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
+            )
+        ),
+        topBar ={
+           TopAppBar(
+                colors = TopAppBarDefaults.smallTopAppBarColors(
+                    containerColor = Color(0xFF151F42)
+                ),
                 title = {
-                    Text(
-                        "TopAppBar",
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                    Column() {
+                        Text(text = "Cadastro", color = Color(0xFF5168D6))
+                    }
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /* doSomething() */ }) {
+
+                    IconButton(
+                        onClick = { /* doSomething() */ }) {
                         Icon(
+
                             imageVector = Icons.Filled.Menu,
-                            contentDescription = "Localized description"
+                            contentDescription = "Localized description",
+                                    tint = Color.White
                         )
                     }
                 },
@@ -112,19 +128,19 @@ fun PinnedTopAppBar() {
                     IconButton(onClick = { /* doSomething() */ }) {
                         Icon(
                             imageVector = Icons.Filled.Edit,
-                            contentDescription = "Localized description"
+                            contentDescription = "Localized description",tint = Color.White
                         )
                     }
                     IconButton(onClick = { /* doSomething() */ }) {
                         Icon(
                             imageVector = Icons.Filled.DateRange,
-                            contentDescription = "Localized description"
+                            contentDescription = "Localized description",tint = Color.White
                         )
                     }
                     IconButton(onClick = { /* doSomething() */ }) {
                         Icon(
                             imageVector = Icons.Filled.AccountCircle,
-                            contentDescription = "Localized description"
+                            contentDescription = "Localized description",tint = Color.White
                         )
                     }
                 },
@@ -133,11 +149,24 @@ fun PinnedTopAppBar() {
         },
         content = { innerPadding ->
             LazyColumn(
+
+                modifier = with (Modifier){
+                    fillMaxSize()
+                        .background(
+                            brush = Brush.horizontalGradient(
+                                colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
+                            )
+                        )
+
+                },
                 contentPadding = innerPadding,
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+
             ) {
 
-                item{
+                item(
+
+                ){
                     Text(""
 
                     )
@@ -157,10 +186,12 @@ fun FormLayoutFilled() {
 
         verticalArrangement = Arrangement.spacedBy(12.dp),
         contentPadding = PaddingValues(vertical = 24.dp),
-                modifier = Modifier.fillMaxWidth().padding(top = 70.dp)                   .paint(
-                    // Replace with your image id
-                    painterResource(id = R.drawable.v0230828_130436_0000),
-                    contentScale = ContentScale.FillBounds)
+                modifier = Modifier.fillMaxWidth().padding(top = 70.dp)
+                    .background(
+                        brush = Brush.horizontalGradient(
+                            colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
+                        )
+                        )
     ) {
         item {
             Column(
@@ -346,11 +377,11 @@ fun ButtonWithIconSample() {
 
         ) {
         Icon(
-            Icons.Filled.Favorite,
+            Icons.Filled.Add,
             contentDescription = "Localized description",
             modifier = Modifier.size(ButtonDefaults.IconSize)
         )
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-        Text("Like")
+        Text("Cadastrar")
     }
 }
