@@ -1,44 +1,34 @@
 package com.example.form
 
-import android.graphics.drawable.shapes.Shape
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material3.*
-import androidx.compose.material3.AlertDialogDefaults.containerColor
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.paint
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.form.ui.theme.FormTheme
@@ -96,11 +86,13 @@ fun PinnedTopAppBar() {
     val cor = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
     Scaffold(
 
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)                    .background(
-            brush = Brush.horizontalGradient(
-                colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
-            )
-        ),
+        modifier = Modifier
+            .nestedScroll(scrollBehavior.nestedScrollConnection)
+            .background(
+                brush = Brush.horizontalGradient(
+                    colors = listOf(Color(0xFF151F42), Color(0xFF252F4F), Color(0xFF151F42))
+                )
+            ),
         topBar ={
            TopAppBar(
                 colors = TopAppBarDefaults.smallTopAppBarColors(
@@ -108,7 +100,7 @@ fun PinnedTopAppBar() {
                 ),
                 title = {
                     Column() {
-                        Text(text = "Cadastro", color = Color(0xFF5168D6))
+                        Text(text = "Cadastro", color = Color(0xFFFFFFFF))
                     }
                 },
                 navigationIcon = {
@@ -186,12 +178,14 @@ fun FormLayoutFilled() {
 
         verticalArrangement = Arrangement.spacedBy(12.dp),
         contentPadding = PaddingValues(vertical = 24.dp),
-                modifier = Modifier.fillMaxWidth().padding(top = 70.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 70.dp)
                     .background(
                         brush = Brush.horizontalGradient(
-                            colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
+                            colors = listOf(Color(0xFF151F42), Color(0xFF252F4F), Color(0xFF151F42))
                         )
-                        )
+                    )
     ) {
         item {
             Column(
@@ -222,6 +216,7 @@ fun FormLayoutFilled() {
                 value = text,
                 onValueChange = { text = it },
                 singleLine = true,
+                colors = TextFieldDefaults.textFieldColors(Color(0xFF151F42)),
                 trailingIcon = {
                     AnimatedVisibility(
                         visible = text.isNotBlank(),
@@ -348,40 +343,25 @@ fun FormLayoutFilled() {
 
             ){
             Button(
+               // border = BorderStroke(width = 2.dp, color = Color(0xFFAC6AB4)),
             onClick = { /* Do something! */ },
-
-
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+                    .padding(horizontal = 16.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFF5369D6))
             ) {
             Icon(
-                Icons.Filled.Build,
+                Icons.Filled.Add,
                 contentDescription = "Localized description",
                 modifier = Modifier.size(ButtonDefaults.IconSize)
             )
             Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-            Text("Like")
+            Text("Cadastrar")
         } }}
 
 
     }
 }
 
-@Preview
-@Composable
-fun ButtonSample() {
-    Button(onClick = { /* Do something! */ }) { Text("Button") }
-}
-@Composable
-fun ButtonWithIconSample() {
-    Button(
-        onClick = { /* Do something! */ },
 
-        ) {
-        Icon(
-            Icons.Filled.Add,
-            contentDescription = "Localized description",
-            modifier = Modifier.size(ButtonDefaults.IconSize)
-        )
-        Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-        Text("Cadastrar")
-    }
-}
