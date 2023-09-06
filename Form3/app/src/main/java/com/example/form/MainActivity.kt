@@ -8,12 +8,15 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -38,7 +41,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
+        App()
         }
     }
 }
@@ -54,11 +57,7 @@ fun App(){
             Box(
                 modifier = with (Modifier){
                     fillMaxSize()
-                        .background(
-                            brush = Brush.horizontalGradient(
-                                colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
-                            )
-                        )
+                    .background(Color(0xFF070D24))
 
                 })
             {
@@ -83,20 +82,17 @@ fun PreviewApp(){
 @Composable
 fun PinnedTopAppBar() {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    val cor = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
+
     Scaffold(
 
         modifier = Modifier
             .nestedScroll(scrollBehavior.nestedScrollConnection)
-            .background(
-                brush = Brush.horizontalGradient(
-                    colors = listOf(Color(0xFF151F42), Color(0xFF252F4F), Color(0xFF151F42))
-                )
-            ),
+            .background(Color(0xFF070D24))
+        ,
         topBar ={
            TopAppBar(
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = Color(0xFF151F42)
+                    containerColor = Color(0xFF070D24)
                 ),
                 title = {
                     Column() {
@@ -144,11 +140,7 @@ fun PinnedTopAppBar() {
 
                 modifier = with (Modifier){
                     fillMaxSize()
-                        .background(
-                            brush = Brush.horizontalGradient(
-                                colors = listOf(Color(0xFF151F42), Color(0xFF252F4F),Color(0xFF151F42))
-                            )
-                        )
+                    .background(Color(0xFF070D24))
 
                 },
                 contentPadding = innerPadding,
@@ -174,194 +166,239 @@ fun PinnedTopAppBar() {
 @Preview
 fun FormLayoutFilled() {
     val focusManager = LocalFocusManager.current
-    LazyColumn(
-
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-        contentPadding = PaddingValues(vertical = 24.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 70.dp)
-                    .background(
-                        brush = Brush.horizontalGradient(
-                            colors = listOf(Color(0xFF151F42), Color(0xFF252F4F), Color(0xFF151F42))
-                        )
-                    )
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(20.dp),
+        contentAlignment = Alignment.TopCenter
     ) {
-        item {
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(12.dp)
+        LazyColumn(
+            modifier = Modifier
+                .widthIn(max = 480.dp)
+                .padding(top = 40.dp)
+                .padding(30.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            contentPadding = PaddingValues(vertical = 24.dp)
+        ) {
+            item {
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                        Box(
+                            modifier = Modifier.size(156.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.a1692903180224),
+                                contentDescription = stringResource(id = R.string.app_name)
+                            )
+                        }
 
-            ){
-                Image(
-                    painter = painterResource(id = R.drawable.a1692903180224),
-                    contentDescription = stringResource(id = R.string.app_name)
+                }
+            }
+            item {
+                var imageUrl = remember { mutableStateOf<String?>(null) }
+                Box(Modifier.fillMaxWidth()) {
+                }
+            }
+            item {
+                var text by remember { mutableStateOf("") }
+                TextField(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                    label = { Text("Nome") },
+                    value = text,
+                    onValueChange = { text = it },
+                    singleLine = true,
+                    trailingIcon = {
+                        AnimatedVisibility(
+                            visible = text.isNotBlank(),
+                            enter = fadeIn(),
+                            exit = fadeOut()
+                        ) {
+                            IconButton(onClick = { text = "" }) {
+                                Icon(Icons.Outlined.Edit, "Clear")
+                            }
+                        }
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Next,
+                        capitalization = KeyboardCapitalization.Words
+                    ),
+                    keyboardActions = KeyboardActions {
+                        focusManager.moveFocus(FocusDirection.Next)
+                    }
                 )
-            }}
 
-        item {
-            var imageUrl = remember { mutableStateOf<String?>(null) }
-            Box(Modifier.fillMaxWidth()) {
+            }
+            item {
+                var text by remember { mutableStateOf("") }
+                TextField(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                    label = { Text("Telefone") },
+                    value = text,
+                    onValueChange = { text = it },
+                    singleLine = true,
+                    trailingIcon = {
+                        AnimatedVisibility(
+                            visible = text.isNotBlank(),
+                            enter = fadeIn(),
+                            exit = fadeOut()
+                        ) {
+                            IconButton(onClick = { text = "" }) {
+                                Icon(Icons.Outlined.Edit, "Clear")
+                            }
+                        }
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Next,
+                        capitalization = KeyboardCapitalization.Words
+                    ),
+                    keyboardActions = KeyboardActions {
+                        focusManager.moveFocus(FocusDirection.Next)
+                    }
+                )
+            }
+            item { Spacer(Modifier.height(4.dp)) }
+            item {
+                val options = listOf("Telefone Fixo", "Celular", "Whatsapp")
+                var expanded by remember { mutableStateOf(false) }
+                var selectedOptionText by remember { mutableStateOf("") }
+                ExposedDropdownMenuBox(
+                    expanded = expanded,
+                    onExpandedChange = { expanded = !expanded },
+                ) {
+                    TextField(
+                        // The `menuAnchor` modifier must be passed to the text field for correctness.
+                        modifier = Modifier.menuAnchor()
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                        value = selectedOptionText,
+                        onValueChange = { selectedOptionText = it },
+                        label = { Text("Tipo de Telefone") },
+                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                        colors = ExposedDropdownMenuDefaults.textFieldColors(),
+                    )
+                    // filter options based on text field value
+                    val filteringOptions = options.filter { it.contains(selectedOptionText, ignoreCase = true) }
+                    if (filteringOptions.isNotEmpty()) {
+                        ExposedDropdownMenu(
+                            expanded = expanded,
+                            onDismissRequest = { expanded = false },
+                        ) {
+                            filteringOptions.forEach { selectionOption ->
+                                DropdownMenuItem(
+                                    text = { Text(selectionOption) },
+                                    onClick = {
+                                        selectedOptionText = selectionOption
+                                        expanded = false
+                                    },
+                                    contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding,
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+            item { Spacer(Modifier.height(4.dp)) }
+            item {
+                var text by remember { mutableStateOf("") }
+                TextField(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                    label = { Text("Observação") },
+                    value = text,
+                    onValueChange = { text = it },
+                    trailingIcon = {
+                        AnimatedVisibility(
+                            visible = text.isNotBlank(),
+                            enter = fadeIn(),
+                            exit = fadeOut()
+                        ) {
+                            IconButton(onClick = { text = "" }) {
+                                Icon(Icons.Outlined.Edit, "Clear")
+                            }
+                        }
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Email,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions {
+                        focusManager.clearFocus()
+                    },
+                    singleLine = true,
+                )
+            }
+
+            item {
+                var selected by remember { mutableStateOf(false) }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(24.dp),
+                    modifier = Modifier
+                        .clickable { selected = selected.not() }
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                ) {
+
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
+
+                    ){
+
+                        Button(
+                            // border = BorderStroke(width = 2.dp, color = Color(0xFFAC6AB4)),
+                            onClick = { /* Do something! */ },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp)
+                                .padding(horizontal = 16.dp),
+                            colors = ButtonDefaults.buttonColors(Color(0xFF5369D6))
+                        ) {
+                            Icon(
+                                Icons.Filled.Add,
+                                contentDescription = "Localized description",
+                                modifier = Modifier.size(ButtonDefaults.IconSize)
+                            )
+                            Spacer(Modifier.size(ButtonDefaults.IconSpacing))
+                            Text("Cadastrar")
+                        }
+                        Button(
+                            // border = BorderStroke(width = 2.dp, color = Color(0xFFAC6AB4)),
+                            onClick = { /* Do something! */ },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp)
+                                .padding(horizontal = 16.dp),
+                            colors = ButtonDefaults.buttonColors(Color(0xFF1C37BE))
+                        ) {
+                            Icon(
+                                Icons.Filled.Clear,
+                                contentDescription = "Localized description",
+                                modifier = Modifier.size(ButtonDefaults.IconSize)
+                            )
+                            Spacer(Modifier.size(ButtonDefaults.IconSpacing))
+                            Text("Cancelar")
+                        }
+                    }
+
+                }
+                }
 
             }
         }
-        item {
-            var text by remember { mutableStateOf("") }
-            TextField(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                label = { Text("First name") },
-                value = text,
-                onValueChange = { text = it },
-                singleLine = true,
-                colors = TextFieldDefaults.textFieldColors(Color(0xFF151F42)),
-                trailingIcon = {
-                    AnimatedVisibility(
-                        visible = text.isNotBlank(),
-                        enter = fadeIn(),
-                        exit = fadeOut()
-                    ) {
-                        IconButton(onClick = { text = "" }) {
-                            Icon(Icons.Outlined.Edit, "Clear")
-                        }
-                    }
-                },
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Text,
-                    imeAction = ImeAction.Next,
-                    capitalization = KeyboardCapitalization.Words
-                ),
-                keyboardActions = KeyboardActions {
-                    focusManager.moveFocus(FocusDirection.Next)
-                }
-            )
-
-        }
-        item { Spacer(Modifier.height(4.dp)) }
-        item {
-            var text by remember { mutableStateOf("") }
-            TextField(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                label = { Text("Last name") },
-                value = text,
-                onValueChange = { text = it },
-                singleLine = true,
-                trailingIcon = {
-                    AnimatedVisibility(
-                        visible = text.isNotBlank(),
-                        enter = fadeIn(),
-                        exit = fadeOut()
-                    ) {
-                        IconButton(onClick = { text = "" }) {
-                            Icon(Icons.Outlined.Edit, "Clear")
-                        }
-                    }
-                },
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Text,
-                    imeAction = ImeAction.Next,
-                    capitalization = KeyboardCapitalization.Words
-                ),
-                keyboardActions = KeyboardActions {
-                    focusManager.moveFocus(FocusDirection.Next)
-                }
-            )
-        }
-        item { Spacer(Modifier.height(4.dp)) }
-        item {
-            var text by remember { mutableStateOf("") }
-            TextField(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                label = { Text("Phone number") },
-                value = text,
-                onValueChange = { text = it },
-                trailingIcon = {
-                    AnimatedVisibility(
-                        visible = text.isNotBlank(),
-                        enter = fadeIn(),
-                        exit = fadeOut()
-                    ) {
-                        IconButton(onClick = { text = "" }) {
-                            Icon(Icons.Outlined.Edit, "Clear")
-                        }
-                    }
-                },
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Phone,
-                    imeAction = ImeAction.Next
-                ),
-                keyboardActions = KeyboardActions {
-                    focusManager.moveFocus(FocusDirection.Next)
-                },
-                singleLine = true,
-            )
-        }
-        item { Spacer(Modifier.height(4.dp)) }
-        item {
-            var text by remember { mutableStateOf("") }
-            TextField(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                label = { Text("Email") },
-                value = text,
-                onValueChange = { text = it },
-                trailingIcon = {
-                    AnimatedVisibility(
-                        visible = text.isNotBlank(),
-                        enter = fadeIn(),
-                        exit = fadeOut()
-                    ) {
-                        IconButton(onClick = { text = "" }) {
-                            Icon(Icons.Outlined.Edit, "Clear")
-                        }
-                    }
-                },
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Email,
-                    imeAction = ImeAction.Done
-                ),
-                keyboardActions = KeyboardActions {
-                    focusManager.clearFocus()
-                },
-                singleLine = true,
-            )
-        }
-        item { Spacer(Modifier.height(4.dp)) }
-
-        item {
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-
-            ){
-            Button(
-               // border = BorderStroke(width = 2.dp, color = Color(0xFFAC6AB4)),
-            onClick = { /* Do something! */ },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp)
-                    .padding(horizontal = 16.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF5369D6))
-            ) {
-            Icon(
-                Icons.Filled.Add,
-                contentDescription = "Localized description",
-                modifier = Modifier.size(ButtonDefaults.IconSize)
-            )
-            Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-            Text("Cadastrar")
-        } }}
-
-
     }
-}
+
 
 
