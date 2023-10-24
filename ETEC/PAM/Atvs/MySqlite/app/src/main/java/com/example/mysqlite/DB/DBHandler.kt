@@ -13,10 +13,15 @@ class DBHandler // creating a constructor for our database handler.
         // setting our column names along with their data types.
         val query = ("CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + NAME_COL + " TEXT,"
-                + DURATION_COL + " TEXT,"
-                + DESCRIPTION_COL + " TEXT,"
-                + TRACKS_COL + " TEXT)")
+                + Nome + " TEXT,"
+                + Endereco + " TEXT,"
+                + Bairro + " TEXT,"
+                + Cep + " TEXT,"
+                + Cidade + " TEXT,"
+                + Estado + " TEXT,"
+                + Telefone + " TEXT,"
+                + Celular +" TEXT)"
+)
 
         // at last we are calling a exec sql method to execute above sql query
         db.execSQL(query)
@@ -24,10 +29,14 @@ class DBHandler // creating a constructor for our database handler.
 
     // this method is use to add new course to our sqlite database.
     fun addNewCourse(
-        courseName: String?,
-        courseDuration: String?,
-        courseDescription: String?,
-        courseTracks: String?
+        Nome: String?,
+        Endereco: String?,
+        Bairro: String?,
+        Cep: String?,
+        Cidade: String?,
+        Estado: String?,
+        Telefone: String?,
+        Celular: String?
     ) {
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -38,10 +47,14 @@ class DBHandler // creating a constructor for our database handler.
         val values = ContentValues()
         // on below line we are passing all values
         // along with its key and value pair.
-        values.put(NAME_COL, courseName)
-        values.put(DURATION_COL, courseDuration)
-        values.put(DESCRIPTION_COL, courseDescription)
-        values.put(TRACKS_COL, courseTracks)
+        values.put(Nome, Nome)
+        values.put(Endereco, Endereco)
+        values.put(Bairro, Bairro)
+        values.put(Cep, Cep)
+        values.put(Cidade, Cidade)
+        values.put(Estado, Estado)
+        values.put(Telefone, Telefone)
+        values.put(Celular, Celular)
         // after adding all values we are passing
         // content values to our table.
         db.insert(TABLE_NAME, null, values)
@@ -71,16 +84,30 @@ class DBHandler // creating a constructor for our database handler.
         private const val ID_COL = "id"
 
         // below variable is for our course name column
-        private const val NAME_COL = "name"
+        private const val Nome = "name"
 
         // below variable id for our course duration column.
-        private const val DURATION_COL = "duration"
+        private const val Endereco = "Endereco"
 
         // below variable for our course description column.
-        private const val DESCRIPTION_COL = "description"
+        private const val Bairro = "Bairro"
 
         // below variable is for our course tracks column.
-        private const val TRACKS_COL = "tracks"
+        private const val Cep = "Cep"
+
+
+        // below variable is for our id column.
+        private const val Cidade = "Cidade"
+
+        // below variable is for our course name column
+        private const val Estado = "Estado"
+
+        // below variable id for our course duration column.
+        private const val Telefone = "Telefone"
+
+        // below variable for our course description column.
+        private const val Celular = "Celular"
+
     }
 
     // we have created a new method for reading all the courses.
@@ -103,7 +130,12 @@ class DBHandler // creating a constructor for our database handler.
                         cursorCourses.getString(1),
                         cursorCourses.getString(4),
                         cursorCourses.getString(2),
-                        cursorCourses.getString(3)
+                        cursorCourses.getString(3),
+                        cursorCourses.getString(5),
+                        cursorCourses.getString(6),
+                        cursorCourses.getString(7),
+                        cursorCourses.getString(8)
+
                     )
                 )
             } while (cursorCourses.moveToNext())

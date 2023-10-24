@@ -109,18 +109,35 @@ fun addDataToDatabase(
 
     val activity = context as Activity
     // on below line creating a variable for battery status
-    val courseName = remember {
+    val Nome = remember {
         mutableStateOf(TextFieldValue())
     }
-    val courseDuration = remember {
+    val Endereco = remember {
         mutableStateOf(TextFieldValue())
     }
-    val courseTracks = remember {
+    val Bairro = remember {
         mutableStateOf(TextFieldValue())
     }
-    val courseDescription = remember {
+    val Cep = remember {
         mutableStateOf(TextFieldValue())
     }
+    val Cidade = remember {
+        mutableStateOf(TextFieldValue())
+    }
+
+    val Estado = remember {
+        mutableStateOf(TextFieldValue())
+    }
+
+    val Telefone = remember {
+        mutableStateOf(TextFieldValue())
+    }
+    val Celular = remember {
+        mutableStateOf(TextFieldValue())
+    }
+
+
+
 
 
     // on below line we are creating a column,
@@ -150,9 +167,9 @@ fun addDataToDatabase(
         // on below line we are creating a text field.
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseName.value,
+            value = Nome.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseName.value = it },
+            onValueChange = { Nome.value = it },
             // on below line we are adding place holder as text as "Enter your email"
             placeholder = { Text(text = "nome") },
             // on below line we are adding modifier to it
@@ -171,9 +188,9 @@ fun addDataToDatabase(
         // on below line we are creating a text field.
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseDuration.value,
+            value = Endereco.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseDuration.value = it },
+            onValueChange = { Endereco.value = it },
             // on below line we are adding place holder as text as "Enter your email"
             placeholder = { Text(text = "endereço") },
             // on below line we are adding modifier to it
@@ -193,9 +210,9 @@ fun addDataToDatabase(
         // on below line we are creating a text field.
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseTracks.value,
+            value = Bairro.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseTracks.value = it },
+            onValueChange = { Bairro.value = it },
             // on below line we are adding place holder as text
             placeholder = { Text(text = "bairro") },
             // on below line we are adding modifier to it
@@ -214,9 +231,9 @@ fun addDataToDatabase(
         // on below line we are creating a text field.
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseDescription.value,
+            value = Cep.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseDescription.value = it },
+            onValueChange = { Cep.value = it },
             // on below line we are adding place holder as text as "Enter your email"
             placeholder = { Text(text = "cep") },
             // on below line we are adding modifier to it
@@ -234,9 +251,9 @@ fun addDataToDatabase(
 
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseDescription.value,
+            value = Cidade.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseDescription.value = it },
+            onValueChange = { Cidade.value = it },
             // on below line we are adding place holder as text as "Enter your email"
             placeholder = { Text(text = "cidade") },
             // on below line we are adding modifier to it
@@ -254,9 +271,9 @@ fun addDataToDatabase(
 
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseDescription.value,
+            value = Estado.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseDescription.value = it },
+            onValueChange = { Estado.value = it },
             // on below line we are adding place holder as text as "Enter your email"
             placeholder = { Text(text = "estado") },
             // on below line we are adding modifier to it
@@ -274,9 +291,9 @@ fun addDataToDatabase(
 
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseDescription.value,
+            value = Telefone.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseDescription.value = it },
+            onValueChange = { Telefone.value = it },
             // on below line we are adding place holder as text as "Enter your email"
             placeholder = { Text(text = "telefone ") },
             // on below line we are adding modifier to it
@@ -294,9 +311,9 @@ fun addDataToDatabase(
 
         TextField(
             // on below line we are specifying value for our email text field.
-            value = courseDescription.value,
+            value = Celular.value,
             // on below line we are adding on value change for text field.
-            onValueChange = { courseDescription.value = it },
+            onValueChange = { Celular.value = it },
             // on below line we are adding place holder as text as "Enter your email"
             placeholder = { Text(text = "celular") },
             // on below line we are adding modifier to it
@@ -315,10 +332,14 @@ fun addDataToDatabase(
         // on below line creating a button to check battery charging status
         Button(onClick = {
             dbHandler.addNewCourse(
-                courseName.value.text,
-                courseDuration.value.text,
-                courseDescription.value.text,
-                courseTracks.value.text
+                Nome.value.text,
+                Endereco.value.text,
+                Bairro.value.text,
+                Cep.value.text,
+                Cidade.value.text,
+                Estado.value.text,
+                Telefone.value.text,
+                Celular.value.text
             )
             Toast.makeText(context, "Course Added to Database", Toast.LENGTH_SHORT).show()
         }) {
