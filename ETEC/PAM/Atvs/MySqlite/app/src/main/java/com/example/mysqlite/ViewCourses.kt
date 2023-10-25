@@ -109,7 +109,7 @@ fun readDataFromDatabase(context: Context) {
                         // inside the text on below line we are
                         // setting text as the language name
                         // from our model class.
-                        text = courseList[index].courseName,
+                        text = courseList[index].Nome,
 
                         // on below line we are adding padding
                         // for our text from all sides.
@@ -126,7 +126,7 @@ fun readDataFromDatabase(context: Context) {
                         // inside the text on below line we are
                         // setting text as the language name
                         // from our model class.
-                        text = "Course Tracks : " + courseList[index].courseTracks,
+                        text = "Endereco : " + courseList[index].Endereco,
 
                         // on below line we are adding padding
                         // for our text from all sides.
@@ -143,7 +143,7 @@ fun readDataFromDatabase(context: Context) {
                         // inside the text on below line we are
                         // setting text as the language name
                         // from our model class.
-                        text = "Course Duration : " + courseList[index].courseDuration,
+                        text = "Bairro : " + courseList[index].Bairro,
 
                         // on below line we are adding padding
                         // for our text from all sides.
@@ -160,7 +160,75 @@ fun readDataFromDatabase(context: Context) {
                         // inside the text on below line we are
                         // setting text as the language name
                         // from our model class.
-                        text = "Description : " + courseList[index].courseDescription,
+                        text = "Cep : " + courseList[index].Cep,
+
+                        // on below line we are adding padding
+                        // for our text from all sides.
+                        modifier = Modifier.padding(4.dp),
+
+                        // on below line we are adding color for our text
+                        color = Color.Black, textAlign = TextAlign.Center
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    // on the below line we are creating a text.
+                    Text(
+                        // inside the text on below line we are
+                        // setting text as the language name
+                        // from our model class.
+                        text = "Cidade : " + courseList[index].Cidade,
+
+                        // on below line we are adding padding
+                        // for our text from all sides.
+                        modifier = Modifier.padding(4.dp),
+
+                        // on below line we are adding color for our text
+                        color = Color.Black, textAlign = TextAlign.Center
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    // on the below line we are creating a text.
+                    Text(
+                        // inside the text on below line we are
+                        // setting text as the language name
+                        // from our model class.
+                        text = "Estado : " + courseList[index].Estado,
+
+                        // on below line we are adding padding
+                        // for our text from all sides.
+                        modifier = Modifier.padding(4.dp),
+
+                        // on below line we are adding color for our text
+                        color = Color.Black, textAlign = TextAlign.Center
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    // on the below line we are creating a text.
+                    Text(
+                        // inside the text on below line we are
+                        // setting text as the language name
+                        // from our model class.
+                        text = "Telefone : " + courseList[index].Telefone,
+
+                        // on below line we are adding padding
+                        // for our text from all sides.
+                        modifier = Modifier.padding(4.dp),
+
+                        // on below line we are adding color for our text
+                        color = Color.Black, textAlign = TextAlign.Center
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    // on the below line we are creating a text.
+                    Text(
+                        // inside the text on below line we are
+                        // setting text as the language name
+                        // from our model class.
+                        text = "Celular : " + courseList[index].Celular,
 
                         // on below line we are adding padding
                         // for our text from all sides.

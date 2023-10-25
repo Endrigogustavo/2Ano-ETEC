@@ -13,14 +13,14 @@ class DBHandler // creating a constructor for our database handler.
         // setting our column names along with their data types.
         val query = ("CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + Nome + " TEXT,"
-                + Endereco + " TEXT,"
-                + Bairro + " TEXT,"
-                + Cep + " TEXT,"
-                + Cidade + " TEXT,"
-                + Estado + " TEXT,"
-                + Telefone + " TEXT,"
-                + Celular +" TEXT)"
+                + Nome_Col + " TEXT,"
+                + Endereco_Col + " TEXT,"
+                + Bairro_Col + " TEXT,"
+                + Cep_Col + " TEXT,"
+                + Cidade_Col + " TEXT,"
+                + Estado_Col + " TEXT,"
+                + Telefone_Col + " TEXT,"
+                + Celular_Col +" TEXT)"
 )
 
         // at last we are calling a exec sql method to execute above sql query
@@ -47,14 +47,14 @@ class DBHandler // creating a constructor for our database handler.
         val values = ContentValues()
         // on below line we are passing all values
         // along with its key and value pair.
-        values.put(Nome, Nome)
-        values.put(Endereco, Endereco)
-        values.put(Bairro, Bairro)
-        values.put(Cep, Cep)
-        values.put(Cidade, Cidade)
-        values.put(Estado, Estado)
-        values.put(Telefone, Telefone)
-        values.put(Celular, Celular)
+        values.put(Nome_Col, Nome)
+        values.put(Endereco_Col, Endereco)
+        values.put(Bairro_Col, Bairro)
+        values.put(Cep_Col, Cep)
+        values.put(Cidade_Col, Cidade)
+        values.put(Estado_Col, Estado)
+        values.put(Telefone_Col, Telefone)
+        values.put(Celular_Col, Celular)
         // after adding all values we are passing
         // content values to our table.
         db.insert(TABLE_NAME, null, values)
@@ -84,29 +84,29 @@ class DBHandler // creating a constructor for our database handler.
         private const val ID_COL = "id"
 
         // below variable is for our course name column
-        private const val Nome = "name"
+        private const val Nome_Col = "name"
 
         // below variable id for our course duration column.
-        private const val Endereco = "Endereco"
+        private const val Endereco_Col = "Endereco"
 
         // below variable for our course description column.
-        private const val Bairro = "Bairro"
+        private const val Bairro_Col = "Bairro"
 
         // below variable is for our course tracks column.
-        private const val Cep = "Cep"
+        private const val Cep_Col = "Cep"
 
 
         // below variable is for our id column.
-        private const val Cidade = "Cidade"
+        private const val Cidade_Col = "Cidade"
 
         // below variable is for our course name column
-        private const val Estado = "Estado"
+        private const val Estado_Col = "Estado"
 
         // below variable id for our course duration column.
-        private const val Telefone = "Telefone"
+        private const val Telefone_Col = "Telefone"
 
         // below variable for our course description column.
-        private const val Celular = "Celular"
+        private const val Celular_Col = "Celular"
 
     }
 

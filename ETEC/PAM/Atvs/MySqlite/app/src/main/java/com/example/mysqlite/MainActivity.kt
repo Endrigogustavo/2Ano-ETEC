@@ -13,6 +13,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -144,6 +146,7 @@ fun addDataToDatabase(
     Column(
         // on below line we are adding a modifier to it,
         modifier = Modifier
+            .verticalScroll(rememberScrollState())
             .fillMaxSize()
             // on below line we are adding a padding.
             .padding(all = 30.dp),
