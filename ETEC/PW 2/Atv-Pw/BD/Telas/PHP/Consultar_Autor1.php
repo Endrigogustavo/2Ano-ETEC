@@ -10,6 +10,8 @@
 </head>
 
 <body>
+<script src="../js/MaskNun.js">
+</script>
 
     <div class="container" id="container">
         <div class="form-container sign-up">
@@ -35,8 +37,8 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 
-                <input type="text" placeholder="Id" name="txtid">
-                <button><input type="submit" value="Pesquisar" name="btnenviar" id="button"></button>
+                <input type="text" placeholder="Id" onkeypress="return blokletras(window.event.keyCode)"  name="txtid">
+                <input type="submit" class="sub" value="Pesquisar" name="btnenviar" id="button">
             </form>
         </div>
         <div class="toggle-container">

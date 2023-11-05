@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="../Css/css.css">
 </head>
 <body>
     <center><section>
@@ -25,7 +26,7 @@
                 <?php echo $pro_mostrar[2]; ?>
             <?php
         }
-            echo "<br><br><button><a href = '../index.html'>Voltar </a></button> "; ?>
+            echo "<br><br><button><a href = '../Cards.html'>Voltar </a></button> "; ?>
             
     </section></center>
 </body>

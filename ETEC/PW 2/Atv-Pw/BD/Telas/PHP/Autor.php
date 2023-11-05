@@ -50,7 +50,7 @@ class Produto{
         try{
             $this->conn = new Conectar();
             $sql = $this->conn->prepare("insert into autor values (null,?,?,?,?)");
-            @$sql->bindParam(1, $this->getname(), PDO::PARAM_STR);
+            @$sql->bindParam(1, $this->getid_autor(), PDO::PARAM_STR);
             @$sql->bindParam(2, $this->getsobre(), PDO::PARAM_STR);
             @$sql->bindParam(3, $this->getemail(), PDO::PARAM_STR);
             @$sql->bindParam(4, $this->getnas(), PDO::PARAM_STR);

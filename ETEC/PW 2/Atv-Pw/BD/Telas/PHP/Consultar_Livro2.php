@@ -4,9 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../Css/css.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
     <title>Modern Login Page | AsmrProg</title>
 </head>
+
 <body>
+
+
+
+</script>
 
     <?php
     $txtid = $_POST["txtid"];
@@ -43,14 +51,14 @@
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                
+
                 <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' disabled>
                 <input type="text" placeholder="Titulo" name="txttitulo" size="5" value='<?php echo $pro_mostrar[1]?>'>
-                <input type="text" placeholder="Categoria" name="txtcad" size="50" value='<?php echo $pro_mostrar[2]?>'>
-                <input type="text" placeholder="ISBN" name="txtis" size="50" value='<?php echo $pro_mostrar[3]?>'>
+                <input type="text" placeholder="Categoria"  name="txtcad" size="50" value='<?php echo $pro_mostrar[2]?>'>
+                <input type="text" placeholder="ISBN" id="isbn" name="txtis" size="50" value='<?php echo $pro_mostrar[3]?>'>
                 <input type="text" placeholder="Idioma" name="txtidm" size="50" value='<?php echo $pro_mostrar[4]?>'>
-                <input type="text" placeholder="Paginas" name="txtpag" size="50" value='<?php echo $pro_mostrar[5]?>'>
-                <button><input type="submit" name="btnalterar" value='Alterar' id="button"></button>
+                <input type="number" onkeypress="return blokletras(window.event.keyCode)" placeholder="Paginas" name="txtpag" size="50" value='<?php echo $pro_mostrar[5]?>'>
+                <input type="submit" name="btnalterar" value='Alterar' class="sub" id="button">
             </form>
         </div>
         <div class="toggle-container">
@@ -70,6 +78,7 @@
     </div>
     <script src="../Css/script.js"></script>
 
+<script src="../Js/Mascara.js"></script>
     <?php
         }
         ?>
@@ -87,7 +96,7 @@
             $pro -> setIdioma($txtidm);
             $pro -> setQtdePag($txtpag);
             $pro_bd = $pro->alterar2();
-            header("location:Consultar_Livro1.php");
+            header("location:../../Home.html");
         }
         ?>
 </body>

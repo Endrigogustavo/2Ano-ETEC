@@ -45,7 +45,7 @@ body{
     margin: 15px 0 10px;
 }
 
-.container button{
+.container .sub{
     background-color: #512da8;
     color: #fff;
     font-size: 12px;

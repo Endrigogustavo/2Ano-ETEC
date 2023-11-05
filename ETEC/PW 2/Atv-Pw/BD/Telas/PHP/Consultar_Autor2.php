@@ -56,8 +56,8 @@
                 <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' disabled>
                 <input type="text" placeholder="Nome" name="txtnome" size="20" value='<?php echo $pro_mostrar[1]?>'>
                 <input type="text" placeholder="Sobrenome" name="txtnas" size="50" value='<?php echo $pro_mostrar[2]?>'>
-                <input type="text" placeholder="Email" name="txtsobre" size="50" value='<?php echo $pro_mostrar[3]?>'>
-                <button><input type="submit" name="btnalterar" value='Alterar' id="button"></button>
+                <input type="email" placeholder="Email" name="txtsobre" size="50" value='<?php echo $pro_mostrar[3]?>'>
+                <input type="submit" name="btnalterar" value='Alterar' class="sub" id="button">
             </form>
         </div>
         <div class="toggle-container">
@@ -93,7 +93,7 @@
             $pro -> setemail($txtsobre);
             $pro -> setid_autor($txtid);
             $pro_bd = $pro->alterar2();
-            header("location:Consultar_Autor1.php");
+            header("location:../../Home.html");
         }
         ?>
 </body>

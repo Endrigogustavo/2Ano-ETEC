@@ -28,7 +28,7 @@ class Usuario{
     function logar(){
         try{
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("Select * from user where login like ? and senha = ?");
+            $sql = $this->conn->prepare("Select * from user where nome like ? and senha = ?");
             @$sql->bindParam(1, $this->getUsu(), PDO::PARAM_STR);
             @$sql->bindParam(2, $this->getSenha(), PDO::PARAM_STR);
             $sql->execute();
@@ -36,6 +36,7 @@ class Usuario{
             $this->conn = null;
         }catch(PDOException $exc){
             echo "Erro ao executar consulta. " . $exc->getMessage();
+            
         }
     }
 }

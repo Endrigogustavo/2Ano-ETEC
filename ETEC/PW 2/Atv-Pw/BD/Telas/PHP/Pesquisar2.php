@@ -36,8 +36,8 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 
-                <input type="text" placeholder="Nome" name="txtnome">
-                <button><input type="submit" value="Pesquisar" name="btnenviar" id="button"></button>
+                <input type="text" placeholder="Nome"  name="txtnome">
+                <input type="submit" value="Pesquisar" name="btnenviar" class="sub" id="button">
             </form>
         </div>
         <div class="toggle-container">
