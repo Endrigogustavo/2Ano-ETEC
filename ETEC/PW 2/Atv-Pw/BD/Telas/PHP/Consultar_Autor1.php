@@ -9,7 +9,19 @@
     <title>Modern Login Page | AsmrProg</title>
 </head>
 
+
 <body>
+<?php
+
+session_start();
+
+include("../Navbar.php");
+
+
+
+
+?>
+<br><br><br>
 <script src="../js/MaskNun.js">
 </script>
 

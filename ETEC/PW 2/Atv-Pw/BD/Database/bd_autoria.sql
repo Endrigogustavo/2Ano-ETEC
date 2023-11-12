@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/11/2023 às 18:15
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 05-Jun-2023 às 04:02
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,8 +24,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `autor`
+-- Estrutura da tabela `autor`
 --
+
+CREATE DATABASE `bd_autoria`;
+
+USE `bd_autoria`;
 
 CREATE TABLE `autor` (
   `Cod_Autor` int(11) NOT NULL,
@@ -33,10 +37,10 @@ CREATE TABLE `autor` (
   `Sobrenome` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `Nasc` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `autor`
+-- Extraindo dados da tabela `autor`
 --
 
 INSERT INTO `autor` (`Cod_Autor`, `NomeAutor`, `Sobrenome`, `email`, `Nasc`) VALUES
@@ -45,16 +49,13 @@ INSERT INTO `autor` (`Cod_Autor`, `NomeAutor`, `Sobrenome`, `email`, `Nasc`) VAL
 (3, 'Willian', 'Sheakespeare', 'williansh@gmail.com', '1564-04-23'),
 (4, 'Stephan', 'Perry', 'residentbevil@gmail.com', '1970-03-14'),
 (5, 'Tomás', ' Antônio Gonzaga', 'tomas02@gmail.com', '1744-06-18'),
-(6, 'sun', 'tzu', 'suntzu@gmail.com', '0000-00-00'),
-(7, 'Marlon', 'Marques Da Silva', 'marlon.silva52@gmail.com', '1983-12-31'),
-(8, 'rr', 'rr', 'rr', '0000-00-00'),
-(9, 'rr', 'rr', 'rr', '0000-00-00'),
-(10, 'Gustavo', 'teste', 'eee@ee', '1111-11-11');
+(6, 'sun', 'tzu', 'suntzu@gmail.com', '544 a.C.'),
+(7, 'Marlon', 'Marques Da Silva', 'marlon.silva52@gmail.com', '1983-12-31');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `autoria`
+-- Estrutura da tabela `autoria`
 --
 
 CREATE TABLE `autoria` (
@@ -62,10 +63,10 @@ CREATE TABLE `autoria` (
   `cod_autor` int(11) NOT NULL,
   `datalancamento` varchar(10) NOT NULL,
   `editoria` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `autoria`
+-- Extraindo dados da tabela `autoria`
 --
 
 INSERT INTO `autoria` (`cod_livro`, `cod_autor`, `datalancamento`, `editoria`) VALUES
@@ -76,13 +77,12 @@ INSERT INTO `autoria` (`cod_livro`, `cod_autor`, `datalancamento`, `editoria`) V
 (2, 3, ' 1601-02', 'Editora Brasiliense'),
 (1, 7, '1591 e 159', 'Editora Record'),
 (3, 1, '1899', 'Editora Brasiliense'),
-(1, 3, '1591 e 159', 'Editora Record'),
-(2, 2, '2222/22/22', 'ww');
+(1, 3, '1591 e 159', 'Editora Record');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `livro`
+-- Estrutura da tabela `livro`
 --
 
 CREATE TABLE `livro` (
@@ -92,10 +92,10 @@ CREATE TABLE `livro` (
   `ISBN` varchar(17) NOT NULL,
   `Idioma` varchar(30) NOT NULL,
   `QtdePag` int(4) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `livro`
+-- Extraindo dados da tabela `livro`
 --
 
 INSERT INTO `livro` (`Cod_livro`, `Titulo`, `Categoria`, `ISBN`, `Idioma`, `QtdePag`) VALUES
@@ -104,57 +104,6 @@ INSERT INTO `livro` (`Cod_livro`, `Titulo`, `Categoria`, `ISBN`, `Idioma`, `Qtde
 (3, 'Espíritos De Fato Existem?', 'Filosofia', '923-08-8734-365-7', 'Português', 150),
 (4, 'Sun Tzu a arte da guerra', 'Fantasia', '875-54-9672-366-6', 'Português', 264),
 (5, 'Uma noite de terror', 'Terror', '167-23-2857-534-7', 'Português', 78);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(30) NOT NULL,
-  `senha` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `user`
---
-
-INSERT INTO `user` (`id`, `nome`, `senha`) VALUES
-(1, 'a', '123');
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `autor`
---
-ALTER TABLE `autor`
-  ADD PRIMARY KEY (`Cod_Autor`);
-
---
--- Índices de tabela `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `autor`
---
-ALTER TABLE `autor`
-  MODIFY `Cod_Autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de tabela `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

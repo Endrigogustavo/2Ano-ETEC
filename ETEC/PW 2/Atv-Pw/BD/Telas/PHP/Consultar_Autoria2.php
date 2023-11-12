@@ -10,6 +10,17 @@
     <title>Modern Login Page | AsmrProg</title>
 </head>
 <body>
+<?php
+
+session_start();
+
+include("../Navbar.php");
+
+
+
+
+?>
+<br><br><br>
 
     <?php
     $txtid1 = $_POST["txtid1"];

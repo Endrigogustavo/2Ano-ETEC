@@ -15,6 +15,17 @@
 
 
 </script>
+<?php
+
+session_start();
+
+include("../Navbar.php");
+
+
+
+
+?>
+<br><br><br>
 
     <?php
     $txtid = $_POST["txtid"];

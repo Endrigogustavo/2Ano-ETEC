@@ -14,7 +14,17 @@
 <body>
 <script src="../js/MaskNun.js">
 </script>
+<?php
 
+session_start();
+
+include("../Navbar.php");
+
+
+
+
+?>
+<br><br><br>
 <div class="container" id="container">
         <div class="form-container sign-up">
             <form>

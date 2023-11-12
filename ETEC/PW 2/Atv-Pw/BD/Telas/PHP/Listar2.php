@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="../Css/css.css">
 </head>
 <body>
+<?php
+
+session_start();
+
+include("../Navbar.php");
+
+
+
+
+?>
+<br><br><br>
     <center><section>
     <font face="Century Gothic" size="6"><b>Relação de Produtos Cadastrados</b><br><br></font>
 
