@@ -54,7 +54,7 @@ include("../Navbar.php");
                 <input type="text" placeholder="ISBN" id="isbn" name="txtestoq1">
                 <input type="text" placeholder="Idioma" name="txtestoq2">
                 <input type="number" placeholder="Paginas" onkeypress="return blokletras(window.event.keyCode)"  name="txtestoq3">
-                <input type="submit" value="Pesquisar" name="btnenviar" class="sub" id="button">
+                <input type="submit" value="Cadastrar" name="btnenviar" class="sub" id="button">
             </form>
         </div>
         <div class="toggle-container">
@@ -90,7 +90,7 @@ include("../Navbar.php");
         $pro->setIdioma($txtestoq2);
         $pro->setQtdePag($txtestoq3);
         echo "<h3><br><br>" . $pro->salvar() . "</h3>";
-        header("location:../../Home.html");
+       
     }
     ?>
 </body>

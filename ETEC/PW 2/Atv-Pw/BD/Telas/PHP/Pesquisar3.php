@@ -76,17 +76,18 @@ include("../Navbar.php");
         $pro = new Produto();
         $pro -> setTitulo($txtnome.'%');
         $pro_bd = $pro->consultar();
+        foreach($pro_bd as $pro_mostrar){
+            ?> <br>
+             <b> <?php echo "Cod_livro: " . $pro_mostrar[0]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "Titulo: " . $pro_mostrar[1]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "Categoria: " . $pro_mostrar[2]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "ISBN: " . $pro_mostrar[3]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "Idioma: " . $pro_mostrar[4]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "QtdePag: " . $pro_mostrar[5]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
+        <?php
+            }
     }
-    foreach($pro_bd as $pro_mostrar){
-        ?> <br>
-         <b> <?php echo "Cod_livro: " . $pro_mostrar[0]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "Titulo: " . $pro_mostrar[1]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "Categoria: " . $pro_mostrar[2]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "ISBN: " . $pro_mostrar[3]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "Idioma: " . $pro_mostrar[4]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "QtdePag: " . $pro_mostrar[5]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
-    <?php
-        }
+   
     ?>
 </body>
 </html>

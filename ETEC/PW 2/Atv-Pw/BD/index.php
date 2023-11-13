@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="Css/style2.css">
 </head>
 <body>
-
+<script src="Telas/Js/MaskNun.js"></script>
 <main>
     <center>
         <h1>Login</h1>
@@ -20,7 +20,8 @@
   <label for="name" class="form__label">Nome</label>
 <br>
 <br>
-<input type="password" class="form__input" id="name" name="txtsenha" placeholder="Senha" required="" />
+
+<input type="password" class="form__input" id="name" onkeypress="return blokletras(window.event.keyCode)" name="txtsenha" placeholder="Senha" required="" />
   <label for="name" class="form__label">Senha</label>
 <br><br>
             <button  value="Cadastar" name="btnenviar" >Logar</button>

@@ -28,11 +28,12 @@ include("../Navbar.php");
 <br><br><br>
 
     <?php
-    $txtid = $_POST["txtid"];
+    $txtid1 = $_POST['txtid'];
     include_once 'Livro.php';
     $p = new Produto();
-    $p -> setCod_livro($txtid);
+    $p -> setCod_livro($txtid1);
     $pro_bd = $p->Alterar();
+    $verifi = count($pro_bd);
     ?>
 <div class="container" id="container">
         <div class="form-container sign-up">
@@ -63,7 +64,7 @@ include("../Navbar.php");
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
 
-                <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' disabled>
+                <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' readonly>
                 <input type="text" placeholder="Titulo" name="txttitulo" size="5" value='<?php echo $pro_mostrar[1]?>'>
                 <input type="text" placeholder="Categoria"  name="txtcad" size="50" value='<?php echo $pro_mostrar[2]?>'>
                 <input type="text" placeholder="ISBN" id="isbn" name="txtis" size="50" value='<?php echo $pro_mostrar[3]?>'>
@@ -106,8 +107,12 @@ include("../Navbar.php");
             $pro -> setISBN($txtis);
             $pro -> setIdioma($txtidm);
             $pro -> setQtdePag($txtpag);
-            $pro_bd = $pro->alterar2();
-            header("location:../../Home.html");
+            echo "<h3><br><br>" . $pro->alterar2() . "</h3>";
+
+        }
+        if ($verifi == 0) {
+            echo '<script>alert("Registro nao existente")</script>'; 
+            echo '<script>setTimeout(function() { window.location.href = "Consultar_Livro1.php"; });</script>';
         }
         ?>
 </body>

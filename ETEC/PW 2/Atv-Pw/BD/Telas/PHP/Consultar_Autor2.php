@@ -7,6 +7,7 @@
     $p = new Produto();
     $p -> setid_autor($txtid);
     $pro_bd = $p->Alterar();
+    $verifi = count($pro_bd);
     ?>
     <br>
 
@@ -62,8 +63,13 @@ include("../Navbar.php");
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
+
+                <!--
+                    disable nao envia paremetro = void
+                    readonly envia
+                -->
                 
-                <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' disabled>
+                <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' readonly>
                 <input type="text" placeholder="Nome" name="txtnome" size="20" value='<?php echo $pro_mostrar[1]?>'>
                 <input type="text" placeholder="Sobrenome" name="txtnas" size="50" value='<?php echo $pro_mostrar[2]?>'>
                 <input type="email" placeholder="Email" name="txtsobre" size="50" value='<?php echo $pro_mostrar[3]?>'>
@@ -103,7 +109,13 @@ include("../Navbar.php");
             $pro -> setemail($txtsobre);
             $pro -> setid_autor($txtid);
             $pro_bd = $pro->alterar2();
-            header("location:../../Home.html");
+            echo "<h3><br><br>" . $pro->alterar2() . "</h3>";
+            
+        }
+
+        if ($verifi == 0) {
+            echo '<script>alert("Registro nao existente")</script>'; 
+            echo '<script>setTimeout(function() { window.location.href = "Consultar_Autor1.php"; }, );</script>';
         }
         ?>
 </body>

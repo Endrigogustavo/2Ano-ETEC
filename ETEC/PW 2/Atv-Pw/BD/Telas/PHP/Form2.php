@@ -52,7 +52,7 @@ include("../Navbar.php");
                 <input type="text" placeholder="Cod Livro" onkeypress="return blokletras(window.event.keyCode)" name="txtcodl">
                 <input type="text" placeholder="Editora"  name="txtedit">
                 <input type="text" placeholder="Data" id="data" name="txtdatal">
-                <input type="submit" class="sub" value="Pesquisar" name="btnenviar" id="button">
+                <input type="submit" class="sub" value="Cadastrar" name="btnenviar" id="button">
             </form>
         </div>
         <div class="toggle-container">
@@ -86,7 +86,7 @@ include("../Navbar.php");
           $pro->setDatalancamento($txtdatal);
           $pro->seteditoria($txtedit);
           echo "<h3><br><br>" . $pro->salvar() . "</h3>";
-          header("location:../../Home.html");
+         
       }
       ?>
       <br>

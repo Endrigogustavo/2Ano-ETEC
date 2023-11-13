@@ -46,7 +46,7 @@ include("../Navbar.php");
                 <input type="text" placeholder="Sobrenome" name="txtestoq"">
                 <input type="email" placeholder="Email" name="txtestoq1"">
                 <input type="text" placeholder="Nascimento" id="data"name="txtestoq2">
-                <input type="submit" class="sub" value="Pesquisar" name="btnenviar" id="button">
+                <input type="submit" class="sub" value="Cadastrar" name="btnenviar" id="button">
             </form>
         </div>
         <div class="toggle-container">
@@ -79,8 +79,8 @@ include("../Navbar.php");
         $pro -> setsobre($txtestoq);
         $pro -> setemail($txtestoq1);
         $pro -> setnas($txtestoq2);
-        $pro->salvar();
-        header("location:../../Home.html");
+        echo "<h3><br><br>" . $pro->salvar() . "</h3>";
+        
     }
     ?>
 </body>

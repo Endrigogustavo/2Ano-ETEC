@@ -76,18 +76,19 @@ include("../Navbar.php");
         $pro = new Produto();
         $pro -> setsobre($txtnome.'%');
         $pro_bd = $pro->consultar();
+        foreach($pro_bd as $pro_mostrar){
+            ?> <br>
+             <b> <?php echo "ID: " . $pro_mostrar[0]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "Nome: " . $pro_mostrar[1]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "Sobrenome: " . $pro_mostrar[2]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "email: " . $pro_mostrar[3]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
+             <b> <?php echo "Nasc: " . $pro_mostrar[4]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
+        <?php
+            }
     }
 
     
-    foreach($pro_bd as $pro_mostrar){
-        ?> <br>
-         <b> <?php echo "ID: " . $pro_mostrar[0]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "Nome: " . $pro_mostrar[1]; ?></b>    &nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "Sobrenome: " . $pro_mostrar[2]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "email: " . $pro_mostrar[3]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
-         <b> <?php echo "Nasc: " . $pro_mostrar[4]; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;
-    <?php
-        }
+  
     ?>
 </body>
 </html>

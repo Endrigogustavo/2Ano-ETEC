@@ -30,6 +30,7 @@ include("../Navbar.php");
     $p -> setcod_autor($txtid1);
     $p -> setcod_livro($txtid2);
     $pro_bd = $p->Alterar();
+    $verifi = count($pro_bd);
     ?>
 
 <div class="container" id="container">
@@ -61,8 +62,8 @@ include("../Navbar.php");
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 
-                <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' disabled>
-                <input type="text" placeholder="id2" name="txted" size="5" value='<?php echo $pro_mostrar[1]?>' disabled>
+                <input type="text" placeholder="Id" name="txtid" size="5" value='<?php echo $pro_mostrar[0]?>' readonly>
+                <input type="text" placeholder="id2" name="txted" size="5" value='<?php echo $pro_mostrar[1]?>' readonly>
                 <input type="text" placeholder="Data lancamento" id="data" name="txtid1" size="50" value='<?php echo $pro_mostrar[2]?>'>
                 <input type="text" placeholder="Editora" name="txtid2" size="50" value='<?php echo $pro_mostrar[3]?>'>
                 <input type="submit" class="sub" name="btnalterar" value='Alterar' id="button">
@@ -101,7 +102,14 @@ include("../Navbar.php");
             $pro -> setcod_autor($txtid1);
             $pro -> setcod_livro($txtid2);
             $pro_bd = $pro->alterar2();
-            header("location:../../Home.html");
+            header("location:Consultar_Autoria1.php");
+
+
+        }
+        
+        if ($verifi == 0) {
+            echo '<script>alert("Registro nao existente")</script>'; 
+            echo '<script>setTimeout(function() { window.location.href = "Consultar_Autoria1.php"; });</script>';
         }
         ?>
 </body>
