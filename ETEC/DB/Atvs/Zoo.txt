@@ -1,0 +1,112 @@
+ create database Zoo
+ use Zoo
+
+
+create table Classe( 
+
+Id_Classe int identity,  
+Descricao varchar(55) Unique Not Null, 
+
+primary key (Id_Classe) 
+
+) 
+
+
+create table Cargo( 
+
+Id_Cargo int identity, 
+Tipo_Cargo varchar(25)  Not Null,  
+Descricao varchar(55)  Not Null, 
+
+primary key (Id_Cargo) 
+
+) 
+
+create table Ala( 
+
+Id_Ala int identity, 
+Localização varchar(25)  Not Null,  
+
+primary key (Id_Ala) 
+
+) 
+  
+
+
+
+create table Animais( 
+
+Id_Animal int Identity, 
+Especie varchar(40) Not Null, 
+Altura float Not Null, 
+Cor varchar(30) Not Null, 
+Id_Classe int, 
+  
+
+primary key (Id_Animal) 
+foreign key (Id_Classe) references Classe 
+
+ 
+
+) 
+
+
+create table Container( 
+
+Id_Container int identity , 
+Id_Animal int identity , 
+Id_Ala int identity ,  
+Tipo_Container varchar(20), 
+
+primary key (Id_Container), 
+foreign key (Id_Animal) references Animais ,
+foreign key (Id_Ala) references Ala
+
+) 
+
+  
+
+create table Funcionário( 
+
+Id_Fun int Identity,
+Id_Cargo int Identity, 
+Id_Expecializacao int, 
+Nome  varchar(40) Not Null,  
+Dt_Nas date Not Null, 
+CPF varchar(20) Not Null, 
+Endereco varchar(20) Not Null, 
+
+primary key (Id_Fun), 
+foreign key (Id_Cargo) references Cargo 
+
+ 
+
+); 
+
+  
+
+create table  Veterinário( 
+
+Id_Veterinario int, 
+Id_Fun int, 
+CRMV varchar(20) Not null, 
+
+primary key (Id_Veterinario), 
+foreign key (Id_Fun) references Funcionário, 
+
+); 
+
+  
+
+create table Consulta( 
+
+Id_Animal int ,  
+Id_Veterinario int, 
+Data datetime Not Null, 
+
+
+foreign key (Id_Animal) references Animais ,
+foreign key (Id_Veterinario) references Veterinário 
+
+
+); 
